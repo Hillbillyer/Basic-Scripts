@@ -106,8 +106,8 @@ echo "
  ░░░░░░░░░  ░░░░░░░░░░░░ ░░░░░  ░░░░░░░░░░░░░░   ░░░░░   ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
 "
 sleep 1s
-# "sandstorm" is the user for the account. Replace with whatever you made it.
-su - sandstorm -c "./inssserver start"
+# "inss" is the user for the account. Replace with whatever you made it.
+su - inss -c "./inssserver start"
 sleep 2s
 clear
 
@@ -140,8 +140,8 @@ echo "
 ░░░░░     ░░░░░░░░░░░░░░ ░░░░░  ░░░░░░  ░░░░░░  ░░░░░     ░░░░░░░░ ░░░░░       ░░░░░  
 "
 sleep 1s
-# "minecraft" is the user for the account. Replace with whatever you made it.
-su - minecraft -c "./mcserver start"
+# "mc" is the user for the account. Replace with whatever you made it.
+su - mc -c "./mcserver start"
 sleep 2s
 clear
 
