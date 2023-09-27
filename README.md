@@ -1,8 +1,7 @@
 # Basic-Scripts
-Basic Scripts for Maintaining LinuxGSM Servers and Ubuntu Machines.
-<br>
+Basic Scripts for Maintaining LinuxGSM Servers and Ubuntu Machines.<br>
 
-These Scripts are for Ubuntu Machines:
+These Scripts are for Ubuntu Machines:<br>
 <br>
 
 These Scripts are helpful if you are running LinuxGSM Game Servers:<br>
