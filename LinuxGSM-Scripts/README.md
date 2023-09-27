@@ -10,3 +10,5 @@ sudo chmod u+x cmd.sh
 ```
 
 ## [start.sh](https://github.com/Hillbillyer/Basic-Scripts/blob/main/LinuxGSM-Scripts/start.sh) - Script for Starting all LinuxGSM Servers<br>
+
+## [stop.sh](https://github.com/Hillbillyer/Basic-Scripts/blob/main/LinuxGSM-Scripts/stop.sh) - Script for Stopping all LinuxGSM Servers<br>
