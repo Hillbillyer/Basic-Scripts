@@ -9,4 +9,5 @@ These Scripts are helpful if you are running LinuxGSM Game Servers:<br>
 
 
 *https://hillbillyer.net*<br>
-*contact@hillbillyer.net*
+*contact@hillbillyer.net*<br>
+*Please send me an email if you have any questions.*<br>
