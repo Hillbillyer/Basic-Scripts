@@ -12,3 +12,7 @@ sudo chmod u+x stop.sh
 ## [game-update.sh](https://github.com/Hillbillyer/Basic-Scripts/blob/main/LinuxGSM-Scripts/game-update.sh) - Script for Updating the Machine and all LinuxGSM Servers <br> *(Please run start.sh after system reboot)* <br>
 ## [start.sh](https://github.com/Hillbillyer/Basic-Scripts/blob/main/LinuxGSM-Scripts/start.sh) - Script for Starting all LinuxGSM Servers <br>
 ## [stop.sh](https://github.com/Hillbillyer/Basic-Scripts/blob/main/LinuxGSM-Scripts/stop.sh) - Script for Stopping all LinuxGSM Servers <br>
+
+
+*https://hillbillyer.net*<br>
+*contact@hillbillyer.net*
