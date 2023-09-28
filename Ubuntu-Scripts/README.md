@@ -5,3 +5,4 @@ These are simple scripts to use on an Ubuntu Machine.
 
 *https://hillbillyer.net*<br>
 *contact@hillbillyer.net*<br>
+*Please send me an email if you have any questions.*<br>

@@ -16,3 +16,4 @@ sudo chmod u+x stop.sh
 
 *https://hillbillyer.net*<br>
 *contact@hillbillyer.net*<br>
+*Please send me an email if you have any questions.*<br>
