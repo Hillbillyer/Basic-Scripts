@@ -25,7 +25,10 @@ chmod u+x start.sh
 ./alias.sh 
 ```
 Now you can simple type:<br>
+*cmd*: starts command input<br>
 *update*: updates the machine<br>
+*start*: starts game servers<br>
+*stop*: stops game server<br>
 
 *https://hillbillyer.net*<br>
 *contact@hillbillyer.net*<br>
