@@ -5,7 +5,7 @@ echo '
 alias update="sudo ./game-update.sh"
 alias start="sudo ./start.sh"
 alias stop="sudo ./stop.sh"
-alias cmd="sudo ./cmd.sh"Scripts
+alias cmd="sudo ./cmd.sh"
 ' >> ~/.bashrc
 
 source ~/.bashrc
