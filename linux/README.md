@@ -10,6 +10,8 @@ chmod u+x hills-scripts/linux/alias.sh
 chmod u+x hills-scripts/linux/update.sh 
 
 ./hills-scripts/linux/alias.sh 
+
+source ~/.bashrc
 ```
 Now you can simple type:<br>
 *update*: updates the machine<br>
