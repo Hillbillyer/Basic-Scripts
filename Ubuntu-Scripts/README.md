@@ -14,8 +14,12 @@ chmod u+x update.sh
 
 ./alias.sh 
 ```
+<<<<<<< HEAD
 Now you can simple type:<br>
 *update*: updates the machine<br>
+=======
+Now you can simple type *update* whenever you would like to update the machine.<br>
+>>>>>>> 64febf23f1c5cb1db796e79cfa660ebeb33c5ff5
 
 *https://hillbillyer.net*<br>
 *contact@hillbillyer.net*<br>
