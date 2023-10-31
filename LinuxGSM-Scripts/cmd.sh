@@ -66,32 +66,10 @@ read -p "
     fi
     \
 
-# Define Desired Command to send to the Game Server
-clear
-echo "$user Selected"
-read -p "
- ██████████           █████                       
-░░███░░░░░█          ░░███                        
- ░███  █ ░ ████████  ███████    ██████  ████████  
- ░██████  ░░███░░███░░░███░    ███░░███░░███░░███ 
- ░███░░█   ░███ ░███  ░███    ░███████  ░███ ░░░  
- ░███ ░   █░███ ░███  ░███ ███░███░░░   ░███      
- ██████████████ █████ ░░█████ ░░██████  █████     
-░░░░░░░░░░░░░░ ░░░░░   ░░░░░   ░░░░░░  ░░░░░      
-   █████████  ██████   ████████████████           
-  ███░░░░░███░░██████ ██████░░███░░░░███          
- ███     ░░░  ░███░█████░███ ░███   ░░███       ██
-░███          ░███░░███ ░███ ░███    ░███      ░░ 
-░███          ░███ ░░░  ░███ ░███    ░███         
-░░███     ███ ░███      ░███ ░███    ███          
- ░░█████████  █████     ███████████████         ██
-  ░░░░░░░░░  ░░░░░     ░░░░░░░░░░░░░░░         ░░ 
-" command
-# The commands are based on the specific game's console commands.
-\
-# "Send" Command using variables previously defined
-su - "$user" -c ""$server" send "$command""
+# Initiate the Send Command to the Desired Server
+su - "$user" -c ""$server" send "
 
+sleep 10s
 clear
 #Feel free to remove this if you edit the script.
 echo "Script By: "
