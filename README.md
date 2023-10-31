@@ -1,11 +1,11 @@
-# Basic-Scripts
-Basic Scripts for Maintaining LinuxGSM Servers and Ubuntu Machines.<br>
+# Hill's Scripts
+Basic Scripts for Maintaining LinuxGSM Servers and Linux Machines.<br>
 
 These Scripts are for Ubuntu Machines:<br>
-[Ubuntu Scripts](https://github.com/Hillbillyer/Basic-Scripts/tree/main/Ubuntu-Scripts) <br>
+[Linux Scripts](https://github.com/Hillbillyer/hills-scripts/tree/main/linux) <br>
 
 These Scripts are helpful if you are running LinuxGSM Game Servers:<br>
-[LinuxGSM Scripts](https://github.com/Hillbillyer/Basic-Scripts/tree/main/LinuxGSM-Scripts) <br>
+[LinuxGSM Scripts](https://github.com/Hillbillyer/hills-scripts/tree/main/lgsm) <br>
 
 
 *https://hillbillyer.net*<br>
