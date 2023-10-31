@@ -5,7 +5,8 @@ These are scripts to make using multiple LinuxGSM Game Servers easier. <br>
 ## [game-update.sh](https://github.com/Hillbillyer/hills-scripts/blob/main/lgsm/game-update.sh) - Script for Updating the Machine and all LinuxGSM Servers <br> *(Please run start.sh after system reboot)* <br>
 ## [start.sh](https://github.com/Hillbillyer/hills-scripts/blob/main/lgsm/start.sh) - Script for Starting a specific LinuxGSM Server <br>
 ## [start-all.sh](https://github.com/Hillbillyer/hills-scripts/blob/main/lgsm/start-all.sh) - Script for Starting all LinuxGSM Servers <br>
-## [stop.sh](https://github.com/Hillbillyer/hills-scripts/blob/main/lgsm/stop.sh) - Script for Stopping all LinuxGSM Servers <br>
+## [stop.sh](https://github.com/Hillbillyer/hills-scripts/blob/main/lgsm/stop.sh) - Script for Stopping a specific LinuxGSM Server <br>
+## [stop-all.sh](https://github.com/Hillbillyer/hills-scripts/blob/main/lgsm/stop-all.sh) - Script for Stopping all LinuxGSM Servers <br>
 
 Run this command to add aliases:<br>
 ```
@@ -17,6 +18,7 @@ chmod u+x hills-scripts/lgsm/game-update.sh
 chmod u+x hills-scripts/lgsm/start.sh
 chmod u+x hills-scripts/lgsm/start-all.sh
 chmod u+x hills-scripts/lgsm/stop.sh
+chmod u+x hills-scripts/lgsm/stop-all.sh
 
 cd hills-scripts/lgsm
 
