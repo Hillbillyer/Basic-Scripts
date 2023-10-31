@@ -26,7 +26,7 @@ read -p "
     # "cs2" is the user for the account. Replace with whatever you made it.
     if [ "$user" == "cs2" ];
         then
-        server="./csgoserver"
+        server="./cs2server"
     # "doi" is the user for the account. Replace with whatever you made it.
     elif [ "$user" == "doi" ];
         then
