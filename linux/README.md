@@ -1,6 +1,6 @@
-# Ubuntu Scripts
+# Linux Scripts
 These are simple scripts to use on an Ubuntu Machine.
-## [update.sh](https://github.com/Hillbillyer/Basic-Scripts/blob/main/Ubuntu-Scripts/update.sh) - Script for Updating Ubuntu Machines<br>
+## [update.sh](https://github.com/Hillbillyer/hills-scripts/blob/main/linux/update.sh) - Script for Updating Linux Machines<br>
 
 Run this command to add alias:<br>
 ```
