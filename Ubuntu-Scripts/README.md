@@ -14,6 +14,7 @@ chmod u+x update.sh
 
 ./alias.sh 
 ```
+Now you can simple type *update* whenever you would like to update the machine.<br>
 
 *https://hillbillyer.net*<br>
 *contact@hillbillyer.net*<br>
