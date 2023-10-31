@@ -37,7 +37,7 @@ sudo ./stop.sh
 
 #Update Game Servers
 
-#CS:GO Server
+#CS2 Server
 echo "
    █████████  █████████  ████████ 
   ███░░░░░██████░░░░░██████░░░░███
@@ -49,8 +49,9 @@ echo "
   ░░░░░░░░░  ░░░░░░░░░ ░░░░░░░░░░ 
 "
 sleep 1s
-# "csgo" is the user for the account. Replace with whatever you made it.
-su - csgo -c "./csgoserver update"
+# "cs2" is the user for the account. Replace with whatever you made it.
+su - cs2 -c "./cs2server update"
+su - cs2 -c "./cs2server update-lgsm"
 sleep 2s
 clear
 
@@ -84,6 +85,7 @@ echo "
 sleep 1s
 # "fctr" is the user for the account. Replace with whatever you made it.
 su - fctr -c "./fctrserver update"
+su - fctr -c "./fctrserver update-lgsm"
 sleep 2s
 clear
 
@@ -100,24 +102,26 @@ echo "
 "
 sleep 1s
 # "gmod" is the user for the account. Replace with whatever you made it.
-su - gmod -c "./gmod update"
+su - gmod -c "./gmodserver update"
+su - gmod -c "./gmodserver update-lgsm"
 sleep 2s
 clear
 
 #Insurgency: Sandstorm Server
 echo "
-  █████████                         █████       █████                                      
- ███░░░░░███                       ░░███       ░░███                                       
-░███    ░░░  ██████  ████████    ███████  ████████████    ██████  ████████  █████████████  
-░░█████████ ░░░░░███░░███░░███  ███░░███ ███░░░░░███░    ███░░███░░███░░███░░███░░███░░███ 
- ░░░░░░░░███ ███████ ░███ ░███ ░███ ░███░░█████ ░███    ░███ ░███ ░███ ░░░  ░███ ░███ ░███ 
- ███    ░██████░░███ ░███ ░███ ░███ ░███ ░░░░███░███ ███░███ ░███ ░███      ░███ ░███ ░███ 
-░░█████████░░████████████ █████░░██████████████ ░░█████ ░░██████  █████     █████░███ █████
- ░░░░░░░░░  ░░░░░░░░░░░░ ░░░░░  ░░░░░░░░░░░░░░   ░░░░░   ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
+ ███████████   █████  █████████  █████████ 
+░░███░░██████ ░░███  ███░░░░░██████░░░░░███
+ ░███ ░███░███ ░███ ░███    ░░░░███    ░░░ 
+ ░███ ░███░░███░███ ░░█████████░░█████████ 
+ ░███ ░███ ░░██████  ░░░░░░░░███░░░░░░░░███
+ ░███ ░███  ░░█████  ███    ░██████    ░███
+ ██████████  ░░█████░░█████████░░█████████ 
+░░░░░░░░░░    ░░░░░  ░░░░░░░░░  ░░░░░░░░░  
 "
 sleep 1s
 # "inss" is the user for the account. Replace with whatever you made it.
 su - inss -c "./inssserver update"
+su - inss -c "./inssserver update-lgsm"
 sleep 2s
 clear
 
@@ -135,23 +139,25 @@ echo "
 sleep 1s
 # "l4d2" is the user for the account. Replace with whatever you made it.
 su - l4d2 -c "./l4d2server update"
+su - l4d2 -c "./l4d2server update-lgsm"
 sleep 2s
 clear
 
 #Minecraft Server
 echo "
- ██████   ██████ ███                                                  ██████  █████   
-░░██████ ██████ ░░░                                                  ███░░███░░███    
- ░███░█████░███ ████ ████████    ██████  ██████  ████████  ██████   ░███ ░░░ ███████  
- ░███░░███ ░███░░███░░███░░███  ███░░██████░░███░░███░░███░░░░░███ ███████  ░░░███░   
- ░███ ░░░  ░███ ░███ ░███ ░███ ░███████░███ ░░░  ░███ ░░░  ███████░░░███░     ░███    
- ░███      ░███ ░███ ░███ ░███ ░███░░░ ░███  ███ ░███     ███░░███  ░███      ░███ ███
- █████     ██████████████ █████░░██████░░██████  █████   ░░████████ █████     ░░█████ 
-░░░░░     ░░░░░░░░░░░░░░ ░░░░░  ░░░░░░  ░░░░░░  ░░░░░     ░░░░░░░░ ░░░░░       ░░░░░  
+ ██████   ██████  █████████ 
+░░██████ ██████  ███░░░░░███
+ ░███░█████░███ ███     ░░░ 
+ ░███░░███ ░███░███         
+ ░███ ░░░  ░███░███         
+ ░███      ░███░░███     ███
+ █████     █████░░█████████ 
+░░░░░     ░░░░░  ░░░░░░░░░  
 "
 sleep 1s
 # "mc" is the user for the account. Replace with whatever you made it.
 su - mc -c "./mcserver update"
+su - mc -c "./mcserver update-lgsm"
 sleep 2s
 clear
 
@@ -169,6 +175,7 @@ echo "
 sleep 1s
 # "ns2" is the user for the account. Replace with whatever you made it.
 su - ns2 -c "./ns2server update"
+su - ns2 -c "./ns2server update-lgsm"
 sleep 2s
 clear
 
@@ -186,6 +193,7 @@ echo "
 sleep 1s
 # "ts3" is the user for the account. Replace with whatever you made it.
 su - ts3 -c "./ts3server update"
+su - ts3 -c "./ts3server update-lgsm"
 sleep 2s
 clear
 
