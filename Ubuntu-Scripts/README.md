@@ -13,7 +13,7 @@ chmod u+x alias.sh
 chmod u+x update.sh
 
 ./alias.sh 
-```<br>
+```
 
 *https://hillbillyer.net*<br>
 *contact@hillbillyer.net*<br>
