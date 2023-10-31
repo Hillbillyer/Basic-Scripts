@@ -2,7 +2,7 @@
 
 echo '
 ##CUSTOM ALIASES
-alias update="sudo ./update.sh" 
+alias update="sudo ./hills-scripts/linux/update.sh" 
 ' >> ~/.bashrc
 
 source ~/.bashrc

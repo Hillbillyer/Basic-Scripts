@@ -4,15 +4,12 @@ These are simple scripts to use on an Ubuntu Machine.
 
 Run this command to add alias:<br>
 ```
-git clone https://github.com/Hillbillyer/Basic-Scripts
+git clone https://github.com/Hillbillyer/hills-scripts
 
-mv Basic-Scripts/Ubuntu-Scripts/alias.sh alias.sh
-mv Basic-Scripts/Ubuntu-Scripts/update.sh update.sh
+chmod u+x hills-scripts/linux/alias.sh
+chmod u+x hills-scripts/linux/update.sh 
 
-chmod u+x alias.sh
-chmod u+x update.sh
-
-./alias.sh 
+./hills-scripts/linux/alias.sh 
 ```
 Now you can simple type:<br>
 *update*: updates the machine<br>
