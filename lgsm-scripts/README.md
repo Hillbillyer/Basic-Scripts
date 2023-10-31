@@ -10,19 +10,17 @@ Run this command to add aliases:<br>
 ```
 git clone https://github.com/Hillbillyer/Basic-Scripts
 
-mv Basic-Scripts/LinuxGSM-Scripts/alias.sh alias.sh
-mv Basic-Scripts/LinuxGSM-Scripts/cmd.sh cmd.sh
-mv Basic-Scripts/LinuxGSM-Scripts/game-update.sh game-update.sh
-mv Basic-Scripts/LinuxGSM-Scripts/start.sh start.sh
-mv Basic-Scripts/LinuxGSM-Scripts/stop.sh stop.sh
+chmod u+x Basic-Scripts/LinuxGSM-Scripts/alias.sh
+chmod u+x Basic-Scripts/LinuxGSM-Scripts/cmd.sh
+chmod u+x Basic-Scripts/LinuxGSM-Scripts/game-update.sh
+chmod u+x Basic-Scripts/LinuxGSM-Scripts/start.sh
+chmod u+x Basic-Scripts/LinuxGSM-Scripts/stop.sh
 
-chmod u+x alias.sh
-chmod u+x cmd.sh
-chmod u+x game-update.sh
-chmod u+x start.sh
-chmod u+x start.sh
+cd Basic-Scripts/LinuxGSM-Scripts
 
 ./alias.sh 
+
+cd
 ```
 Now you can simple type:<br>
 *cmd*: starts command input<br>
