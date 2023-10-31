@@ -69,7 +69,7 @@ read -p "
 # Initiate the Send Command to the Desired Server
 su - "$user" -c ""$server" send "
 
-sleep 10s
+sleep 5s
 clear
 #Feel free to remove this if you edit the script.
 echo "Script By: "
@@ -88,5 +88,5 @@ echo "
 "
 echo "https://hillbillyer.net"
 echo "contact@hillbillyer.net"
-sleep 1s
+sleep 3s
 clear
