@@ -12,7 +12,7 @@ mv Basic-Scripts/Ubuntu-Scripts/update.sh update.sh
 chmod u+x alias.sh
 chmod u+x update.sh
 
-./alias.sh
+./alias.sh <br>
 '''<br>
 
 *https://hillbillyer.net*<br>
