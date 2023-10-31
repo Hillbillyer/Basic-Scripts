@@ -86,7 +86,7 @@ read -p "
         server="./ts3server"
     #If no user is found, this error displays.
     else
-        start-all
+        sudo ./hills-scripts/lgsm/start-all.sh
 
     fi
     \

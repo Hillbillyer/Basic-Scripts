@@ -23,6 +23,8 @@ cd hills-scripts/lgsm
 ./alias.sh 
 
 cd
+
+source ~/.bashrc
 ```
 Now you can simple type:<br>
 *cmd*: starts command input<br>
