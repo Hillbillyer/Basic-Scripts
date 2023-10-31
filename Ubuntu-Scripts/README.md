@@ -2,7 +2,7 @@
 These are simple scripts to use on an Ubuntu Machine.
 ## [update.sh](https://github.com/Hillbillyer/Basic-Scripts/blob/main/Ubuntu-Scripts/update.sh) - Script for Updating Ubuntu Machines<br>
 
-Run this command to add an alias "update" for update.sh:
+Run this command to add an alias "update" for update.sh:<br>
 '''
 git clone https://github.com/Hillbillyer/Basic-Scripts
 
@@ -13,7 +13,7 @@ chmod u+x alias.sh
 chmod u+x update.sh
 
 ./alias.sh
-'''
+'''<br>
 
 *https://hillbillyer.net*<br>
 *contact@hillbillyer.net*<br>
