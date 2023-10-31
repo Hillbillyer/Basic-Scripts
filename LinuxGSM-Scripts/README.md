@@ -8,7 +8,7 @@ These are scripts to make using multiple LinuxGSM Game Servers easier. <br>
 
 Run this command to add aliases:<br>
 ```
-git clone https://github.com/Hillbillyer/LinuxGSM-Scripts
+git clone https://github.com/Hillbillyer/Basic-Scripts
 
 mv Basic-Scripts/LinuxGSM-Scripts/alias.sh alias.sh
 mv Basic-Scripts/LinuxGSM-Scripts/cmd.sh cmd.sh
