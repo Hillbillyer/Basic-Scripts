@@ -23,8 +23,8 @@ read -p "
 " user
 
     # Define which server has been selected
-    # "csgo" is the user for the account. Replace with whatever you made it.
-    if [ "$user" == "csgo" ];
+    # "cs2" is the user for the account. Replace with whatever you made it.
+    if [ "$user" == "cs2" ];
         then
         server="./csgoserver"
     # "doi" is the user for the account. Replace with whatever you made it.
