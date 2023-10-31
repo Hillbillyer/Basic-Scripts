@@ -1,7 +1,8 @@
 #!/bin/bash
 
-##Script to Start All Game Servers
+##Script to Stop All Game Servers
 clear
+
 
 #CS2 Server
 echo "
@@ -16,7 +17,7 @@ echo "
 "
 sleep 1s
 # "cs2" is the user for the account. Replace with whatever you made it.
-su - cs2 -c "./cs2server start"
+su - cs2 -c "./cs2server stop"
 sleep 2s
 clear
 
@@ -33,7 +34,7 @@ echo "
 "
 sleep 1s
 # "doi" is the user for the account. Replace with whatever you made it.
-su - doi -c "./doiserver start"
+su - doi -c "./doiserver stop"
 sleep 2s
 clear
 
@@ -50,7 +51,7 @@ echo "
 "
 sleep 1s
 # "fctr" is the user for the account. Replace with whatever you made it.
-su - fctr -c "./fctrserver start"
+su - fctr -c "./fctrserver stop"
 sleep 2s
 clear
 
@@ -67,7 +68,7 @@ echo "
 "
 sleep 1s
 # "gmod" is the user for the account. Replace with whatever you made it.
-su - gmod -c "./gmod start"
+su - gmod -c "./gmod stop"
 sleep 2s
 clear
 
@@ -84,7 +85,7 @@ echo "
 "
 sleep 1s
 # "inss" is the user for the account. Replace with whatever you made it.
-su - inss -c "./inssserver start"
+su - inss -c "./inssserver stop"
 sleep 2s
 clear
 
@@ -101,7 +102,7 @@ echo "
 "
 sleep 1s
 # "l4d2" is the user for the account. Replace with whatever you made it.
-su - l4d2 -c "./l4d2server start"
+su - l4d2 -c "./l4d2server stop"
 sleep 2s
 clear
 
@@ -118,7 +119,7 @@ echo "
 "
 sleep 1s
 # "mc" is the user for the account. Replace with whatever you made it.
-su - mc -c "./mcserver start"
+su - mc -c "./mcserver stop"
 sleep 2s
 clear
 
@@ -135,7 +136,7 @@ echo "
 "
 sleep 1s
 # "ns2" is the user for the account. Replace with whatever you made it.
-su - ns2 -c "./ns2server start"
+su - ns2 -c "./ns2server stop"
 sleep 2s
 clear
 
@@ -152,11 +153,33 @@ echo "
 "
 sleep 1s
 # "ts3" is the user for the account. Replace with whatever you made it.
-su - ts3 -c "./ts3server start"
+su - ts3 -c "./ts3server stop"
 sleep 2s
 clear
 
-#Feel free to remove this if you modify the script.
+#Finished
+echo "
+  █████████                                                        
+ ███░░░░░███                                                       
+░███    ░░░   ██████  ████████  █████ █████ ██████  ████████ █████ 
+░░█████████  ███░░███░░███░░███░░███ ░░███ ███░░███░░███░░█████░░  
+ ░░░░░░░░███░███████  ░███ ░░░  ░███  ░███░███████  ░███ ░░░░█████ 
+ ███    ░███░███░░░   ░███      ░░███ ███ ░███░░░   ░███    ░░░░███
+░░█████████ ░░██████  █████      ░░█████  ░░██████  █████   ██████ 
+ ░░░░░░░░░   ░░░░░░  ░░░░░        ░░░░░    ░░░░░░  ░░░░░   ░░░░░░  
+    ███████       ██████ ██████  ████  ███                         
+  ███░░░░░███    ███░░█████░░███░░███ ░░░                          
+ ███     ░░███  ░███ ░░░███ ░░░  ░███ ████ ████████    ██████      
+░███      ░███ ██████████████    ░███░░███░░███░░███  ███░░███     
+░███      ░███░░░███░░░░███░     ░███ ░███ ░███ ░███ ░███████      
+░░███     ███   ░███   ░███      ░███ ░███ ░███ ░███ ░███░░░       
+ ░░░███████░    █████  █████     ██████████████ █████░░██████      
+   ░░░░░░░     ░░░░░  ░░░░░     ░░░░░░░░░░░░░░ ░░░░░  ░░░░░░       
+"
+sleep 3s
+clear
+
+# Feel free to remove this if you have modified the Script.
 echo "Script By: "
 echo "
  █████   █████ ███ ████ ████ █████      ███ ████ ████                             

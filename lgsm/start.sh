@@ -1,6 +1,6 @@
 #!/bin/bash
 
-##Script to Stop All Game Servers
+##Script to Start Game Servers
 clear
 echo "
   █████████                                                         
@@ -91,7 +91,7 @@ read -p "
     fi
     \
 
-# Initiate the Send Command to the Desired Server
+# Start the Desired Server
 su - "$user" -c ""$server" start "
 
 #Finished

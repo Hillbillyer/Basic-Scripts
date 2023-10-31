@@ -1,6 +1,6 @@
 #!/bin/bash
 
-##Script to Stop All Game Servers
+##Script to Stop Game Servers
 clear
 echo "
   █████████                                                                            
@@ -23,158 +23,73 @@ echo "
 sleep 3s
 clear
 
-#CS2 Server
-echo "
-   █████████  █████████  ████████ 
-  ███░░░░░██████░░░░░██████░░░░███
- ███     ░░░░███    ░░░░░░    ░███
-░███        ░░█████████   ███████ 
-░███         ░░░░░░░░███ ███░░░░  
-░░███     ██████    ░██████      █
- ░░█████████░░█████████░██████████
-  ░░░░░░░░░  ░░░░░░░░░ ░░░░░░░░░░ 
-"
-sleep 1s
-# "cs2" is the user for the account. Replace with whatever you made it.
-su - cs2 -c "./cs2server stop"
-sleep 2s
+#Define User/Game Server
 clear
+read -p "
+ ██████████           █████                      
+░░███░░░░░█          ░░███                       
+ ░███  █ ░ ████████  ███████    ██████  ████████ 
+ ░██████  ░░███░░███░░░███░    ███░░███░░███░░███
+ ░███░░█   ░███ ░███  ░███    ░███████  ░███ ░░░ 
+ ░███ ░   █░███ ░███  ░███ ███░███░░░   ░███     
+ ██████████████ █████ ░░█████ ░░██████  █████    
+░░░░░░░░░░░░░░ ░░░░░   ░░░░░   ░░░░░░  ░░░░░     
+ █████  █████                                    
+░░███  ░░███                                     
+ ░███   ░███  █████   ██████  ████████        ██ 
+ ░███   ░███ ███░░   ███░░███░░███░░███      ░░  
+ ░███   ░███░░█████ ░███████  ░███ ░░░           
+ ░███   ░███ ░░░░███░███░░░   ░███               
+ ░░████████  ██████ ░░██████  █████           ██ 
+  ░░░░░░░░  ░░░░░░   ░░░░░░  ░░░░░           ░░  
+" user
 
-#Day of Infamy Server
-echo "
- ██████████      ███████   █████
-░░███░░░░███   ███░░░░░███░░███ 
- ░███   ░░███ ███     ░░███░███ 
- ░███    ░███░███      ░███░███ 
- ░███    ░███░███      ░███░███ 
- ░███    ███ ░░███     ███ ░███ 
- ██████████   ░░░███████░  █████
-░░░░░░░░░░      ░░░░░░░   ░░░░░ 
-"
-sleep 1s
-# "doi" is the user for the account. Replace with whatever you made it.
-su - doi -c "./doiserver stop"
-sleep 2s
-clear
+    # Define which server has been selected
+    # "cs2" is the user for the account. Replace with whatever you made it.
+    if [ "$user" == "cs2" ];
+        then
+        server="./cs2server"
+    # "doi" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "doi" ];
+        then
+        server="./doiserver"
+    # "fctr" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "fctr" ];
+        then
+        server="./fctrserver"
+    # "gmod" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "gmod" ];
+        then
+        server="./gmodserver"
+    # "inss" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "inss" ];
+        then
+        server="./inssserver"
+    # "l4d2" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "l4d2" ];
+        then
+        server="./l4d2server"
+    # "mc" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "mc" ];
+        then
+        server="./mcserver"
+    # "ns2" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "ns2" ];
+        then
+        server="./ns2server"
+    # "ts3" is the user for the account. Replace with whatever you made it.
+    elif [ "$user" == "ts3" ];
+        then
+        server="./ts3server"
+    #If no user is found, this error displays.
+    else
+        sudo ./hills-scripts/lgsm/stop-all.sh
 
-#Factorio Server
-echo "
- ███████████ █████████  ███████████ ███████████  
-░░███░░░░░░████░░░░░███░█░░░███░░░█░░███░░░░░███ 
- ░███   █ ░███     ░░░ ░   ░███  ░  ░███    ░███ 
- ░███████ ░███             ░███     ░██████████  
- ░███░░░█ ░███             ░███     ░███░░░░░███ 
- ░███  ░  ░░███     ███    ░███     ░███    ░███ 
- █████     ░░█████████     █████    █████   █████
-░░░░░       ░░░░░░░░░     ░░░░░    ░░░░░   ░░░░░ 
-"
-sleep 1s
-# "fctr" is the user for the account. Replace with whatever you made it.
-su - fctr -c "./fctrserver stop"
-sleep 2s
-clear
+    fi
+    \
 
-#Garry's Mod Server
-echo "
-   █████████  ██████   ██████   ███████   ██████████  
-  ███░░░░░███░░██████ ██████  ███░░░░░███░░███░░░░███ 
- ███     ░░░  ░███░█████░███ ███     ░░███░███   ░░███
-░███          ░███░░███ ░███░███      ░███░███    ░███
-░███    █████ ░███ ░░░  ░███░███      ░███░███    ░███
-░░███  ░░███  ░███      ░███░░███     ███ ░███    ███ 
- ░░█████████  █████     █████░░░███████░  ██████████  
-  ░░░░░░░░░  ░░░░░     ░░░░░   ░░░░░░░   ░░░░░░░░░░   
-"
-sleep 1s
-# "gmod" is the user for the account. Replace with whatever you made it.
-su - gmod -c "./gmod stop"
-sleep 2s
-clear
-
-#Insurgency: Sandstorm Server
-echo "
- ███████████   █████  █████████  █████████ 
-░░███░░██████ ░░███  ███░░░░░██████░░░░░███
- ░███ ░███░███ ░███ ░███    ░░░░███    ░░░ 
- ░███ ░███░░███░███ ░░█████████░░█████████ 
- ░███ ░███ ░░██████  ░░░░░░░░███░░░░░░░░███
- ░███ ░███  ░░█████  ███    ░██████    ░███
- ██████████  ░░█████░░█████████░░█████████ 
-░░░░░░░░░░    ░░░░░  ░░░░░░░░░  ░░░░░░░░░  
-"
-sleep 1s
-# "inss" is the user for the account. Replace with whatever you made it.
-su - inss -c "./inssserver stop"
-sleep 2s
-clear
-
-#Left 4 Dead 2 Server
-echo "
- ██████████ █████ ██████████    ████████ 
-░░███░░███ ░░███ ░░███░░░░███  ███░░░░███
- ░███ ░███  ░███ █░███   ░░███░░░    ░███
- ░███ ░███████████░███    ░███   ███████ 
- ░███ ░░░░░░░███░█░███    ░███  ███░░░░  
- ░███      █░███░ ░███    ███  ███      █
- ████████████████ ██████████  ░██████████
-░░░░░░░░░░░░░░░░ ░░░░░░░░░░   ░░░░░░░░░░ 
-"
-sleep 1s
-# "l4d2" is the user for the account. Replace with whatever you made it.
-su - l4d2 -c "./l4d2server stop"
-sleep 2s
-clear
-
-#Minecraft Server
-echo "
- ██████   ██████  █████████ 
-░░██████ ██████  ███░░░░░███
- ░███░█████░███ ███     ░░░ 
- ░███░░███ ░███░███         
- ░███ ░░░  ░███░███         
- ░███      ░███░░███     ███
- █████     █████░░█████████ 
-░░░░░     ░░░░░  ░░░░░░░░░  
-"
-sleep 1s
-# "mc" is the user for the account. Replace with whatever you made it.
-su - mc -c "./mcserver stop"
-sleep 2s
-clear
-
-#Natural Selection 2 Server
-echo "
- ██████   █████  █████████  ████████ 
-░░██████ ░░███  ███░░░░░██████░░░░███
- ░███░███ ░███ ░███    ░░░░░░    ░███
- ░███░░███░███ ░░█████████   ███████ 
- ░███ ░░██████  ░░░░░░░░███ ███░░░░  
- ░███  ░░█████  ███    ░██████      █
- █████  ░░█████░░█████████░██████████
-░░░░░    ░░░░░  ░░░░░░░░░ ░░░░░░░░░░ 
-"
-sleep 1s
-# "ns2" is the user for the account. Replace with whatever you made it.
-su - ns2 -c "./ns2server stop"
-sleep 2s
-clear
-
-#TeamSpeak Server
-echo "
- ████████████████████  ████████ 
-░█░░░███░░░███░░░░░██████░░░░███
-░   ░███  ░███    ░░░░░░    ░███
-    ░███  ░░█████████   ██████░ 
-    ░███   ░░░░░░░░███ ░░░░░░███
-    ░███   ███    ░██████   ░███
-    █████ ░░█████████░░████████ 
-   ░░░░░   ░░░░░░░░░  ░░░░░░░░  
-"
-sleep 1s
-# "ts3" is the user for the account. Replace with whatever you made it.
-su - ts3 -c "./ts3server stop"
-sleep 2s
-clear
+# Stop the Desired Server
+su - "$user" -c ""$server" stop "
 
 #Finished
 echo "
@@ -195,25 +110,5 @@ echo "
  ░░░███████░    █████  █████     ██████████████ █████░░██████      
    ░░░░░░░     ░░░░░  ░░░░░     ░░░░░░░░░░░░░░ ░░░░░  ░░░░░░       
 "
-sleep 3s
-clear
-
-# Feel free to remove this if you have modified the Script.
-echo "Script By: "
-echo "
- █████   █████ ███ ████ ████ █████      ███ ████ ████                             
-░░███   ░░███ ░░░ ░░███░░███░░███      ░░░ ░░███░░███                             
- ░███    ░███ ████ ░███ ░███ ░███████  ████ ░███ ░███ █████ ████ ██████  ████████ 
- ░███████████░░███ ░███ ░███ ░███░░███░░███ ░███ ░███░░███ ░███ ███░░███░░███░░███
- ░███░░░░░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███░███████  ░███ ░░░ 
- ░███    ░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███ ░███░███░░░   ░███     
- █████   ████████████████████████████  ███████████████░░███████░░██████  █████    
-░░░░░   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ░░░░░░░░░░░░░░░  ░░░░░███ ░░░░░░  ░░░░░     
-                                                       ███ ░███                   
-                                                      ░░██████                    
-                                                       ░░░░░░                     
-"
-echo "https://hillbillyer.net"
-echo "contact@hillbillyer.net"
 sleep 3s
 clear
