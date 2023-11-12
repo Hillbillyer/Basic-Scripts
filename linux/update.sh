@@ -30,7 +30,7 @@ echo "
 sleep 5s
 clear
 # Updates Machine
-sudo apt update -y && sudo apt upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
 
 #Finished
 echo "----Server is Up-to-Date----"
