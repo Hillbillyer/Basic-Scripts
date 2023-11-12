@@ -1,228 +1,37 @@
 #!/bin/bash
 
-##Script to Update All Game Servers
-
 #Machine Updates
 clear
-echo "
- ██████   ██████                   █████      ███                    
-░░██████ ██████                   ░░███      ░░░                     
- ░███░█████░███   ██████    ██████ ░███████  ████ ████████    ██████ 
- ░███░░███ ░███  ░░░░░███  ███░░███░███░░███░░███░░███░░███  ███░░███
- ░███ ░░░  ░███   ███████ ░███ ░░░ ░███ ░███ ░███ ░███ ░███ ░███████ 
- ░███      ░███  ███░░███ ░███  ███░███ ░███ ░███ ░███ ░███ ░███░░░  
- █████     █████░░████████░░██████ ████ ██████████████ █████░░██████ 
-░░░░░     ░░░░░  ░░░░░░░░  ░░░░░░ ░░░░ ░░░░░░░░░░░░░░ ░░░░░  ░░░░░░  
- █████  █████              █████           █████                     
-░░███  ░░███              ░░███           ░░███                      
- ░███   ░███ ████████   ███████   ██████  ███████    ██████          
- ░███   ░███░░███░░███ ███░░███  ░░░░░███░░░███░    ███░░███         
- ░███   ░███ ░███ ░███░███ ░███   ███████  ░███    ░███████          
- ░███   ░███ ░███ ░███░███ ░███  ███░░███  ░███ ███░███░░░           
- ░░████████  ░███████ ░░████████░░████████ ░░█████ ░░██████          
-  ░░░░░░░░   ░███░░░   ░░░░░░░░  ░░░░░░░░   ░░░░░   ░░░░░░           
-             ░███                                                    
-             █████                                                   
-            ░░░░░                                                    
-"
+echo "--==Machine Updating==--"
+sleep 3s
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
+clear
+#Copy List of Current LGSM Servers
+echo "--==Grabbing Server List==--"
+sleep 3s
+wget -O hills-scripts/lgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
+clear
+#Create Game Server Variables
+echo "--==Updating Game Servers==--"
 sleep 3s
 clear
-#Updates Machine First
-sudo apt update -y && sudo apt upgrade -y
-sleep 3s
+while IFS=", " read shortname gameservername gamename os;
+#Updates Currently Installed Game Servers
+do 
+    clear
+    sudo su - ${shortname} -c "echo '--=='${gameservername}' Stopping==--' && ./'${shortname}'server stop && clear"
+    sudo su - ${shortname} -c "echo '--=='${gameservername}' Updating==--' && ./'${shortname}'server update && clear"
+    sudo su - ${shortname} -c "echo '--=='${gameservername}' LGSM Config Updating==--' && ./'${shortname}'server update-lgsm && clear"
+    sudo su - ${shortname} -c "echo '--=='${gameservername}' Starting==--' && ./'${shortname}'server start && clear"
+done < hills-scripts/lgsm/serverlist.csv
 clear
+#Alerts Scripts has Completed
+echo "--==All Installed Game Servers Up-To-Date!==--"
+sleep 3s && clear
 
-#Turn Off Game Servers - REQUIRES stop.sh in /home
-sudo ./stop.sh
 
-#Update Game Servers
 
-#CS2 Server
-echo "
-   █████████  █████████  ████████ 
-  ███░░░░░██████░░░░░██████░░░░███
- ███     ░░░░███    ░░░░░░    ░███
-░███        ░░█████████   ███████ 
-░███         ░░░░░░░░███ ███░░░░  
-░░███     ██████    ░██████      █
- ░░█████████░░█████████░██████████
-  ░░░░░░░░░  ░░░░░░░░░ ░░░░░░░░░░ 
-"
-sleep 1s
-# "cs2" is the user for the account. Replace with whatever you made it.
-su - cs2 -c "./cs2server update"
-su - cs2 -c "./cs2server update-lgsm"
-sleep 2s
-clear
-
-echo "
- ██████████      ███████   █████
-░░███░░░░███   ███░░░░░███░░███ 
- ░███   ░░███ ███     ░░███░███ 
- ░███    ░███░███      ░███░███ 
- ░███    ░███░███      ░███░███ 
- ░███    ███ ░░███     ███ ░███ 
- ██████████   ░░░███████░  █████
-░░░░░░░░░░      ░░░░░░░   ░░░░░ 
-"
-sleep 1s
-# "doi" is the user for the account. Replace with whatever you made it.
-su - doi -c "./doiserver update"
-su - doi -c "./doiserver update-lgsm"
-sleep 2s
-clear
-
-echo "
- ███████████ █████████  ███████████ ███████████  
-░░███░░░░░░████░░░░░███░█░░░███░░░█░░███░░░░░███ 
- ░███   █ ░███     ░░░ ░   ░███  ░  ░███    ░███ 
- ░███████ ░███             ░███     ░██████████  
- ░███░░░█ ░███             ░███     ░███░░░░░███ 
- ░███  ░  ░░███     ███    ░███     ░███    ░███ 
- █████     ░░█████████     █████    █████   █████
-░░░░░       ░░░░░░░░░     ░░░░░    ░░░░░   ░░░░░ 
-"
-sleep 1s
-# "fctr" is the user for the account. Replace with whatever you made it.
-su - fctr -c "./fctrserver update"
-su - fctr -c "./fctrserver update-lgsm"
-sleep 2s
-clear
-
-#Garry's Mod Server
-echo "
-   █████████  ██████   ██████   ███████   ██████████  
-  ███░░░░░███░░██████ ██████  ███░░░░░███░░███░░░░███ 
- ███     ░░░  ░███░█████░███ ███     ░░███░███   ░░███
-░███          ░███░░███ ░███░███      ░███░███    ░███
-░███    █████ ░███ ░░░  ░███░███      ░███░███    ░███
-░░███  ░░███  ░███      ░███░░███     ███ ░███    ███ 
- ░░█████████  █████     █████░░░███████░  ██████████  
-  ░░░░░░░░░  ░░░░░     ░░░░░   ░░░░░░░   ░░░░░░░░░░   
-"
-sleep 1s
-# "gmod" is the user for the account. Replace with whatever you made it.
-su - gmod -c "./gmodserver update"
-su - gmod -c "./gmodserver update-lgsm"
-sleep 2s
-clear
-
-#Insurgency: Sandstorm Server
-echo "
- ███████████   █████  █████████  █████████ 
-░░███░░██████ ░░███  ███░░░░░██████░░░░░███
- ░███ ░███░███ ░███ ░███    ░░░░███    ░░░ 
- ░███ ░███░░███░███ ░░█████████░░█████████ 
- ░███ ░███ ░░██████  ░░░░░░░░███░░░░░░░░███
- ░███ ░███  ░░█████  ███    ░██████    ░███
- ██████████  ░░█████░░█████████░░█████████ 
-░░░░░░░░░░    ░░░░░  ░░░░░░░░░  ░░░░░░░░░  
-"
-sleep 1s
-# "inss" is the user for the account. Replace with whatever you made it.
-su - inss -c "./inssserver update"
-su - inss -c "./inssserver update-lgsm"
-sleep 2s
-clear
-
-#Left 4 Dead 2 Server
-echo "
- ██████████ █████ ██████████    ████████ 
-░░███░░███ ░░███ ░░███░░░░███  ███░░░░███
- ░███ ░███  ░███ █░███   ░░███░░░    ░███
- ░███ ░███████████░███    ░███   ███████ 
- ░███ ░░░░░░░███░█░███    ░███  ███░░░░  
- ░███      █░███░ ░███    ███  ███      █
- ████████████████ ██████████  ░██████████
-░░░░░░░░░░░░░░░░ ░░░░░░░░░░   ░░░░░░░░░░ 
-"
-sleep 1s
-# "l4d2" is the user for the account. Replace with whatever you made it.
-su - l4d2 -c "./l4d2server update"
-su - l4d2 -c "./l4d2server update-lgsm"
-sleep 2s
-clear
-
-#Minecraft Server
-echo "
- ██████   ██████  █████████ 
-░░██████ ██████  ███░░░░░███
- ░███░█████░███ ███     ░░░ 
- ░███░░███ ░███░███         
- ░███ ░░░  ░███░███         
- ░███      ░███░░███     ███
- █████     █████░░█████████ 
-░░░░░     ░░░░░  ░░░░░░░░░  
-"
-sleep 1s
-# "mc" is the user for the account. Replace with whatever you made it.
-su - mc -c "./mcserver update"
-su - mc -c "./mcserver update-lgsm"
-sleep 2s
-clear
-
-#Natural Selection 2 Server
-echo "
- ██████   █████  █████████  ████████ 
-░░██████ ░░███  ███░░░░░██████░░░░███
- ░███░███ ░███ ░███    ░░░░░░    ░███
- ░███░░███░███ ░░█████████   ███████ 
- ░███ ░░██████  ░░░░░░░░███ ███░░░░  
- ░███  ░░█████  ███    ░██████      █
- █████  ░░█████░░█████████░██████████
-░░░░░    ░░░░░  ░░░░░░░░░ ░░░░░░░░░░ 
-"
-sleep 1s
-# "ns2" is the user for the account. Replace with whatever you made it.
-su - ns2 -c "./ns2server update"
-su - ns2 -c "./ns2server update-lgsm"
-sleep 2s
-clear
-
-#TeamSpeak Server
-echo "
- ████████████████████  ████████ 
-░█░░░███░░░███░░░░░██████░░░░███
-░   ░███  ░███    ░░░░░░    ░███
-    ░███  ░░█████████   ██████░ 
-    ░███   ░░░░░░░░███ ░░░░░░███
-    ░███   ███    ░██████   ░███
-    █████ ░░█████████░░████████ 
-   ░░░░░   ░░░░░░░░░  ░░░░░░░░  
-"
-sleep 1s
-# "ts3" is the user for the account. Replace with whatever you made it.
-su - ts3 -c "./ts3server update"
-su - ts3 -c "./ts3server update-lgsm"
-sleep 2s
-clear
-
-#Finished
-echo "
-  █████████                                                          
- ███░░░░░███                                                         
-░███    ░░░   ██████  ████████  █████ █████ ██████  ████████ █████   
-░░█████████  ███░░███░░███░░███░░███ ░░███ ███░░███░░███░░█████░░    
- ░░░░░░░░███░███████  ░███ ░░░  ░███  ░███░███████  ░███ ░░░░█████   
- ███    ░███░███░░░   ░███      ░░███ ███ ░███░░░   ░███    ░░░░███  
-░░█████████ ░░██████  █████      ░░█████  ░░██████  █████   ██████   
- ░░░░░░░░░   ░░░░░░  ░░░░░        ░░░░░    ░░░░░░  ░░░░░   ░░░░░░    
- █████  █████              █████           █████                █████
-░░███  ░░███              ░░███           ░░███                ░░███ 
- ░███   ░███ ████████   ███████   ██████  ███████    ██████  ███████ 
- ░███   ░███░░███░░███ ███░░███  ░░░░░███░░░███░    ███░░██████░░███ 
- ░███   ░███ ░███ ░███░███ ░███   ███████  ░███    ░███████░███ ░███ 
- ░███   ░███ ░███ ░███░███ ░███  ███░░███  ░███ ███░███░░░ ░███ ░███ 
- ░░████████  ░███████ ░░████████░░████████ ░░█████ ░░██████░░████████
-  ░░░░░░░░   ░███░░░   ░░░░░░░░  ░░░░░░░░   ░░░░░   ░░░░░░  ░░░░░░░░ 
-             ░███                                                    
-             █████                                                   
-            ░░░░░                                                    
-"
-sudo sleep 3s
-clear
-
-# Feel free to remove if you have modified the script.
+# Intellectual Property
 echo "Script By: "
 echo "
  █████   █████ ███ ████ ████ █████      ███ ████ ████                             
@@ -240,143 +49,3 @@ echo "
 echo "https://hillbillyer.net"
 echo "contact@hillbillyer.net"
 sleep 3s
-
-#Reboot Machine
-echo "----Machine will Reboot in 10s!----"
-sleep 1s
-clear
-echo "
- ████    █████   
-░░███  ███░░░███ 
- ░███ ███   ░░███
- ░███░███    ░███
- ░███░███    ░███
- ░███░░███   ███ 
- █████░░░█████░  
-░░░░░   ░░░░░░   
-"
-sleep 1s
-clear
-echo "
-  ████████ 
- ███░░░░███
-░███   ░███
-░░█████████
- ░░░░░░░███
- ███   ░███
-░░████████ 
- ░░░░░░░░  
-"
-sleep 1s
-clear
-echo "
-  ████████ 
- ███░░░░███
-░███   ░███
-░░████████ 
- ███░░░░███
-░███   ░███
-░░████████ 
- ░░░░░░░░  
-"
-sleep 1s
-clear
-echo "
- ██████████
-░███░░░░███
-░░░    ███ 
-      ███  
-     ███   
-    ███    
-   ███     
-  ░░░      
-"
-sleep 1s
-clear
-echo "
-  ████████ 
- ███░░░░███
-░███   ░░░ 
-░█████████ 
-░███░░░░███
-░███   ░███
-░░████████ 
- ░░░░░░░░  
-"
-sleep 1s
-clear
-echo "
- ██████████
-░███░░░░░░█
-░███     ░ 
-░█████████ 
-░░░░░░░░███
- ███   ░███
-░░████████ 
- ░░░░░░░░  
-"
-sleep 1s
-clear
-echo "
- █████ █████ 
-░░███ ░░███  
- ░███  ░███ █
- ░███████████
- ░░░░░░░███░█
-       ░███░ 
-       █████ 
-      ░░░░░  
-"
-sleep 1s
-clear
-echo "
-  ████████ 
- ███░░░░███
-░░░    ░███
-   ██████░ 
-  ░░░░░░███
- ███   ░███
-░░████████ 
- ░░░░░░░░  
-"
-sleep 1s
-clear
-echo "
-  ████████ 
- ███░░░░███
-░░░    ░███
-   ███████ 
-  ███░░░░  
- ███      █
-░██████████
-░░░░░░░░░░ 
-"
-sleep 1s
-clear
-echo "
- ████ 
-░░███ 
- ░███ 
- ░███ 
- ░███ 
- ░███ 
- █████
-░░░░░ 
-"
-sleep 1s
-clear
-echo "
- ███████████           █████                        █████    ███                     ███
-░░███░░░░░███         ░░███                        ░░███    ░░░                     ░███
- ░███    ░███   ██████ ░███████   ██████   ██████  ███████  ████ ████████    ███████░███
- ░██████████   ███░░███░███░░███ ███░░███ ███░░███░░░███░  ░░███░░███░░███  ███░░███░███
- ░███░░░░░███ ░███████ ░███ ░███░███ ░███░███ ░███  ░███    ░███ ░███ ░███ ░███ ░███░███
- ░███    ░███ ░███░░░  ░███ ░███░███ ░███░███ ░███  ░███ ███░███ ░███ ░███ ░███ ░███░░░ 
- █████   █████░░██████ ████████ ░░██████ ░░██████   ░░█████ █████████ █████░░███████ ███
-░░░░░   ░░░░░  ░░░░░░ ░░░░░░░░   ░░░░░░   ░░░░░░     ░░░░░ ░░░░░░░░░ ░░░░░  ░░░░░███░░░ 
-                                                                            ███ ░███    
-                                                                           ░░██████     
-                                                                            ░░░░░░      
-"
-sleep 2s
-sudo reboot

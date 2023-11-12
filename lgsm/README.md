@@ -20,13 +20,23 @@ chmod u+x hills-scripts/lgsm/start-all.sh
 chmod u+x hills-scripts/lgsm/stop.sh
 chmod u+x hills-scripts/lgsm/stop-all.sh
 
-cd hills-scripts/lgsm
-
-./alias.sh 
-
-cd
+./hills-scripts/lgsm/alias.sh 
 
 source ~/.bashrc
+```
+Run this command to update:<br>
+```
+sudo rm -r hills-scripts
+
+git clone https://github.com/Hillbillyer/hills-scripts
+
+chmod u+x hills-scripts/lgsm/alias.sh
+chmod u+x hills-scripts/lgsm/cmd.sh
+chmod u+x hills-scripts/lgsm/game-update.sh
+chmod u+x hills-scripts/lgsm/start.sh
+chmod u+x hills-scripts/lgsm/start-all.sh
+chmod u+x hills-scripts/lgsm/stop.sh
+chmod u+x hills-scripts/lgsm/stop-all.sh
 ```
 Now you can simple type:<br>
 *cmd*: starts command input<br>
