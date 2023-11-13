@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##Script to Update Server
-
+sleep 2s
 #Update 
 echo "
  ██████   ██████                   █████      ███                    
@@ -31,9 +31,6 @@ sleep 2s
 clear
 # Updates Machine
 sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
-
-#Finished
-echo "--==Server is Up-to-Date==--"
 sleep 2s
 clear
 
