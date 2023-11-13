@@ -68,14 +68,14 @@ clear
 echo "--==Updating Game Servers==--"
 sleep 3s
 clear
-while IFS=", " read shortname gameservername gamename os;
+while IFS="," read shortname gameservername gamename os;
 #Updates Currently Installed Game Servers
 do 
     clear
-    sudo su - ${shortname} -c "echo '--=='${gameservername}' Stopping==--' && ./'${shortname}'server stop && clear"
-    sudo su - ${shortname} -c "echo '--=='${gameservername}' Updating==--' && ./'${shortname}'server update && clear"
-    sudo su - ${shortname} -c "echo '--=='${gameservername}' LGSM Config Updating==--' && ./'${shortname}'server update-lgsm && clear"
-    sudo su - ${shortname} -c "echo '--=='${gameservername}' Starting==--' && ./'${shortname}'server start && clear"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' Stopping==--' && ./'${shortname}'server stop && clear"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' Updating==--' && ./'${shortname}'server update && clear"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' LGSM Config Updating==--' && ./'${shortname}'server update-lgsm && clear"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' Starting==--' && ./'${shortname}'server start && clear"
 done < hills-scripts/lgsm/serverlist.csv
 clear
 #Alerts Scripts has Completed
