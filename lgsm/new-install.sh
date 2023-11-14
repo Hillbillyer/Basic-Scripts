@@ -26,6 +26,11 @@ while [ "$exit_script" != true ]; do
                 ;;
             *)
                 clear
+                if ["$opt" == "quit"]; then
+                    exit_script=true
+                    break
+                    ;;
+                else
                 echo "$opt <-- Selected"
                 # Add your custom actions based on the selected server here
 
@@ -153,6 +158,7 @@ while [ "$exit_script" != true ]; do
                 ;;
         esac
     done
+    fi
 done
 
 #Feel free to remove this if you edit the script.
