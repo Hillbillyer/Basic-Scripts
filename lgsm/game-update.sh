@@ -25,8 +25,18 @@ echo "
 "
 sleep 3s
 clear
-sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
-sleep 2s
+                # Update package lists
+                sudo apt update
+
+                # Upgrade installed packages
+                sudo apt upgrade -y
+
+                # Upgrade the distribution (including the OS)
+                sudo apt dist-upgrade -y
+
+                # Remove unnecessary files
+                sudo apt autoremove -y
+                sudo apt cleansleep 2s
 clear
 echo "
    █████████                                                       
