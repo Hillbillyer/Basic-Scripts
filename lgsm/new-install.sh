@@ -14,7 +14,8 @@ done < <(tail -n +2 hills-scripts/lgsm/serverlist.csv)
 exit_script=false
 
 while [ "$exit_script" != true ]; do
-    PS3='Press Ctl+C when you are finished... Please enter your choice: '
+    PS3='Press Ctl+C when you are finished... 
+    Please enter your choice: '
     select opt in "${servers[@]}" "quit";
     do
         case $opt in 
