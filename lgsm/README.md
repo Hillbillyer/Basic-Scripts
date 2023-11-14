@@ -10,6 +10,9 @@ These are scripts to make using multiple LinuxGSM Game Servers easier. <br>
 
 Run this command to add aliases:<br>
 ```
+sudo rm -r hills-scripts
+sed -i '/##CUSTOM ALIASES/,/^$/d' ~/.bashrc
+
 git clone https://github.com/Hillbillyer/hills-scripts
 
 chmod u+x hills-scripts/lgsm/alias.sh
@@ -19,25 +22,14 @@ chmod u+x hills-scripts/lgsm/start.sh
 chmod u+x hills-scripts/lgsm/start-all.sh
 chmod u+x hills-scripts/lgsm/stop.sh
 chmod u+x hills-scripts/lgsm/stop-all.sh
+chmod u+x hills-scripts/lgsm/new-install.sh
 
 ./hills-scripts/lgsm/alias.sh 
 
 source ~/.bashrc
 ```
-Run this command to update:<br>
-```
-sudo rm -r hills-scripts
-
-git clone https://github.com/Hillbillyer/hills-scripts
-
-chmod u+x hills-scripts/lgsm/alias.sh
-chmod u+x hills-scripts/lgsm/cmd.sh
-chmod u+x hills-scripts/lgsm/game-update.sh
-chmod u+x hills-scripts/lgsm/start.sh
-chmod u+x hills-scripts/lgsm/start-all.sh
-chmod u+x hills-scripts/lgsm/stop.sh
-chmod u+x hills-scripts/lgsm/stop-all.sh
-```
+*It will also update them.* <br>
+<br>
 Now you can simple type:<br>
 *cmd*: starts command input<br>
 *update*: updates the machine<br>
