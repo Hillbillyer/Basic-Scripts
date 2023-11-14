@@ -23,7 +23,7 @@ while [ "$exit_script" != true ]; do
                 echo "Exiting the script."
                 exit_script=true
                 break
-                ;;
+            
             *)
                 clear
                 if ["$opt" == "quit"]; then
