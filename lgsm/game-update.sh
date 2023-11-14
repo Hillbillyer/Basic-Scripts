@@ -36,7 +36,8 @@ clear
 
                 # Remove unnecessary files
                 sudo apt autoremove -y
-                sudo apt cleansleep 2s
+                sudo apt clean
+                sleep 2s
 clear
 echo "
    █████████                                                       
