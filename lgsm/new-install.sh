@@ -87,7 +87,7 @@ while [ "$exit_script" != true ]; do
                 
                 "
                 echo "When the Game Server is installing, you will need to enter your Steam Guard Code when the installation says:"
-                echo ""Installing Killing Floor Server""
+                echo ""Installing "$opt" Server""
                 echo "Type your Steam Guard Code and press ENTER when you see this happening."
                 echo "--sometimes putting it in twice gets it working, don't be afraid--"
                 echo "
