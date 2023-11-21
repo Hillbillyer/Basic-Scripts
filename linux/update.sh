@@ -29,10 +29,20 @@ echo "
 "
 sleep 2s
 clear
-# Updates Machine
-sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
-sleep 2s
-clear
+    # Update package lists
+    sudo apt update
+
+    # Upgrade installed packages
+    sudo apt upgrade -y
+
+    # Upgrade the distribution (including the OS)
+    sudo apt dist-upgrade -y
+
+    # Remove unnecessary files
+    sudo apt autoremove -y
+    sudo apt clean
+    sleep 2s
+    clear
 
 #Feel free to remove this if you modify the script.
 echo "Script By: "
