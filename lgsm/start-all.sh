@@ -1,159 +1,27 @@
 #!/bin/bash
 
+curl -H "Title: Game-Server" -d "Starting All Game Servers" https://ntfy.ahillier.dev/game-server
+
 ##Script to Start All Game Servers
 clear
-
-#CS2 Server
-echo "
-   █████████  █████████  ████████ 
-  ███░░░░░██████░░░░░██████░░░░███
- ███     ░░░░███    ░░░░░░    ░███
-░███        ░░█████████   ███████ 
-░███         ░░░░░░░░███ ███░░░░  
-░░███     ██████    ░██████      █
- ░░█████████░░█████████░██████████
-  ░░░░░░░░░  ░░░░░░░░░ ░░░░░░░░░░ 
-"
-sleep 1s
-# "cs2" is the user for the account. Replace with whatever you made it.
-su - cs2 -c "./cs2server start"
-sleep 2s
+#Copy List of Current LGSM Servers
+echo "--==Grabbing Server List==--"
+sleep 3s
+wget -O hills-scripts/lgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
+clear
+#Create Game Server Variables
+echo "--==Updating Game Servers==--"
+sleep 3s
+clear
+while IFS="," read shortname gameservername gamename os;
+#Updates Currently Installed Game Servers
+do 
+    clear
+    sudo su - ${shortname} -c "echo '--=='${gamename}' Starting==--' && ./'${shortname}'server start && clear"
+done < hills-scripts/lgsm/serverlist.csv
 clear
 
-#Day of Infamy Server
-echo "
- ██████████      ███████   █████
-░░███░░░░███   ███░░░░░███░░███ 
- ░███   ░░███ ███     ░░███░███ 
- ░███    ░███░███      ░███░███ 
- ░███    ░███░███      ░███░███ 
- ░███    ███ ░░███     ███ ░███ 
- ██████████   ░░░███████░  █████
-░░░░░░░░░░      ░░░░░░░   ░░░░░ 
-"
-sleep 1s
-# "doi" is the user for the account. Replace with whatever you made it.
-su - doi -c "./doiserver start"
-sleep 2s
-clear
-
-#Factorio Server
-echo "
- ███████████ █████████  ███████████ ███████████  
-░░███░░░░░░████░░░░░███░█░░░███░░░█░░███░░░░░███ 
- ░███   █ ░███     ░░░ ░   ░███  ░  ░███    ░███ 
- ░███████ ░███             ░███     ░██████████  
- ░███░░░█ ░███             ░███     ░███░░░░░███ 
- ░███  ░  ░░███     ███    ░███     ░███    ░███ 
- █████     ░░█████████     █████    █████   █████
-░░░░░       ░░░░░░░░░     ░░░░░    ░░░░░   ░░░░░ 
-"
-sleep 1s
-# "fctr" is the user for the account. Replace with whatever you made it.
-su - fctr -c "./fctrserver start"
-sleep 2s
-clear
-
-#Garry's Mod Server
-echo "
-   █████████  ██████   ██████   ███████   ██████████  
-  ███░░░░░███░░██████ ██████  ███░░░░░███░░███░░░░███ 
- ███     ░░░  ░███░█████░███ ███     ░░███░███   ░░███
-░███          ░███░░███ ░███░███      ░███░███    ░███
-░███    █████ ░███ ░░░  ░███░███      ░███░███    ░███
-░░███  ░░███  ░███      ░███░░███     ███ ░███    ███ 
- ░░█████████  █████     █████░░░███████░  ██████████  
-  ░░░░░░░░░  ░░░░░     ░░░░░   ░░░░░░░   ░░░░░░░░░░   
-"
-sleep 1s
-# "gmod" is the user for the account. Replace with whatever you made it.
-su - gmod -c "./gmod start"
-sleep 2s
-clear
-
-#Insurgency: Sandstorm Server
-echo "
- ███████████   █████  █████████  █████████ 
-░░███░░██████ ░░███  ███░░░░░██████░░░░░███
- ░███ ░███░███ ░███ ░███    ░░░░███    ░░░ 
- ░███ ░███░░███░███ ░░█████████░░█████████ 
- ░███ ░███ ░░██████  ░░░░░░░░███░░░░░░░░███
- ░███ ░███  ░░█████  ███    ░██████    ░███
- ██████████  ░░█████░░█████████░░█████████ 
-░░░░░░░░░░    ░░░░░  ░░░░░░░░░  ░░░░░░░░░  
-"
-sleep 1s
-# "inss" is the user for the account. Replace with whatever you made it.
-su - inss -c "./inssserver start"
-sleep 2s
-clear
-
-#Left 4 Dead 2 Server
-echo "
- ██████████ █████ ██████████    ████████ 
-░░███░░███ ░░███ ░░███░░░░███  ███░░░░███
- ░███ ░███  ░███ █░███   ░░███░░░    ░███
- ░███ ░███████████░███    ░███   ███████ 
- ░███ ░░░░░░░███░█░███    ░███  ███░░░░  
- ░███      █░███░ ░███    ███  ███      █
- ████████████████ ██████████  ░██████████
-░░░░░░░░░░░░░░░░ ░░░░░░░░░░   ░░░░░░░░░░ 
-"
-sleep 1s
-# "l4d2" is the user for the account. Replace with whatever you made it.
-su - l4d2 -c "./l4d2server start"
-sleep 2s
-clear
-
-#Minecraft Server
-echo "
- ██████   ██████  █████████ 
-░░██████ ██████  ███░░░░░███
- ░███░█████░███ ███     ░░░ 
- ░███░░███ ░███░███         
- ░███ ░░░  ░███░███         
- ░███      ░███░░███     ███
- █████     █████░░█████████ 
-░░░░░     ░░░░░  ░░░░░░░░░  
-"
-sleep 1s
-# "mc" is the user for the account. Replace with whatever you made it.
-su - mc -c "./mcserver start"
-sleep 2s
-clear
-
-#Natural Selection 2 Server
-echo "
- ██████   █████  █████████  ████████ 
-░░██████ ░░███  ███░░░░░██████░░░░███
- ░███░███ ░███ ░███    ░░░░░░    ░███
- ░███░░███░███ ░░█████████   ███████ 
- ░███ ░░██████  ░░░░░░░░███ ███░░░░  
- ░███  ░░█████  ███    ░██████      █
- █████  ░░█████░░█████████░██████████
-░░░░░    ░░░░░  ░░░░░░░░░ ░░░░░░░░░░ 
-"
-sleep 1s
-# "ns2" is the user for the account. Replace with whatever you made it.
-su - ns2 -c "./ns2server start"
-sleep 2s
-clear
-
-#TeamSpeak Server
-echo "
- ████████████████████  ████████ 
-░█░░░███░░░███░░░░░██████░░░░███
-░   ░███  ░███    ░░░░░░    ░███
-    ░███  ░░█████████   ██████░ 
-    ░███   ░░░░░░░░███ ░░░░░░███
-    ░███   ███    ░██████   ░███
-    █████ ░░█████████░░████████ 
-   ░░░░░   ░░░░░░░░░  ░░░░░░░░  
-"
-sleep 1s
-# "ts3" is the user for the account. Replace with whatever you made it.
-su - ts3 -c "./ts3server start"
-sleep 2s
+curl -H "Title: Game-Server" -d "All Game Servers Up & Running" https://ntfy.ahillier.dev/game-server
 clear
 
 #Feel free to remove this if you modify the script.
