@@ -73,7 +73,7 @@ clear
 #Copy List of Current LGSM Servers
 echo "--==Grabbing Server List==--"
 sleep 3s
-wget -O hills-scripts/lgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
+sudo wget -O hills-scripts/lgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
 clear
 #Create Game Server Variables
 echo "--==Updating Game Servers==--"
