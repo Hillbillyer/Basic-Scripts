@@ -83,10 +83,10 @@ clear
 while IFS="," read shortname gameservername gamename os;
 do 
     clear
-    sudo -u ${shortname} echo '--=='${gamename}' Stopping==--' && sudo -u ${shortname} ./'${shortname}'server stop && clear 2>> /tmp/game-update-error.log
-    sudo -u ${shortname} echo '--=='${gamename}' Updating==--' && sudo -u ${shortname} ./'${shortname}'server update && clear 2>> /tmp/game-update-error.log
-    sudo -u ${shortname} echo '--=='${gamename}' LGSM Config Updating==--' && sudo -u ${shortname} ./'${shortname}'server update-lgsm && clear 2>> /tmp/game-update-error.log
-    sudo -u ${shortname} echo '--=='${gamename}' Starting==--' && sudo -u ${shortname} ./'${shortname}'server start && clear 2>> /tmp/game-update-error.log
+    sudo -u ${shortname} echo '--=='${gamename}' Stopping==--' && sudo -u ${shortname} ./'${shortname}'server stop && clear >> /tmp/game-update-error.log 2>&1
+    sudo -u ${shortname} echo '--=='${gamename}' Updating==--' && sudo -u ${shortname} ./'${shortname}'server update && clear >> /tmp/game-update-error.log 2>&1
+    sudo -u ${shortname} echo '--=='${gamename}' LGSM Config Updating==--' && sudo -u ${shortname} ./'${shortname}'server update-lgsm && clear >> /tmp/game-update-error.log 2>&1
+    sudo -u ${shortname} echo '--=='${gamename}' Starting==--' && sudo -u ${shortname} ./'${shortname}'server start && clear >> /tmp/game-update-error.log 2>&1
 done < hills-scripts/lgsm/serverlist.csv
 clear
 #Alerts Scripts has Completed
