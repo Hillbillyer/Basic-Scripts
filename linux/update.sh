@@ -30,17 +30,17 @@ echo "
 sleep 2s
 clear
     # Update package lists
-    sudo apt update
+    sudo NEEDRESTART_MODE=a apt update
 
     # Upgrade installed packages
-    sudo apt upgrade -y
+    sudo NEEDRESTART_MODE=a apt upgrade -y
 
     # Upgrade the distribution (including the OS)
-    sudo apt dist-upgrade -y
+    sudo NEEDRESTART_MODE=a apt dist-upgrade -y
 
     # Remove unnecessary files
-    sudo apt autoremove -y
-    sudo apt clean
+    sudo NEEDRESTART_MODE=a apt autoremove -y
+    sudo NEEDRESTART_MODE=a apt clean
     sleep 2s
     clear
 
