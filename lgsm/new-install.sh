@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 wget -O hills-scripts/lgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
 clear

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #Machine Updates
 clear

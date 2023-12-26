@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ##Script to Stop All Game Servers
 clear

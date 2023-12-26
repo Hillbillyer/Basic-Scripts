@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ##Script to Update Server
 sleep 2s

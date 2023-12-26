@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ## This is a script to send commands to LinuxGSM Game Servers.
 #Define User/Game Server
