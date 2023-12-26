@@ -42,3 +42,6 @@ echo "
 "
 echo "https://hillbillyer.net"
 echo "contact@hillbillyer.net"
+
+sleep 3s
+sudo reboot
