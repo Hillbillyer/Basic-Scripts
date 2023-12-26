@@ -1,36 +1,16 @@
-#!/bin/sh
+# !/bin/sh
 
-##Script to Update Server
-sleep 2s
-#Update 
-echo "
- ██████   ██████                   █████      ███                    
-░░██████ ██████                   ░░███      ░░░                     
- ░███░█████░███   ██████    ██████ ░███████  ████ ████████    ██████ 
- ░███░░███ ░███  ░░░░░███  ███░░███░███░░███░░███░░███░░███  ███░░███
- ░███ ░░░  ░███   ███████ ░███ ░░░ ░███ ░███ ░███ ░███ ░███ ░███████ 
- ░███      ░███  ███░░███ ░███  ███░███ ░███ ░███ ░███ ░███ ░███░░░  
- █████     █████░░████████░░██████ ████ ██████████████ █████░░██████ 
-░░░░░     ░░░░░  ░░░░░░░░  ░░░░░░ ░░░░ ░░░░░░░░░░░░░░ ░░░░░  ░░░░░░  
-                                                                     
-                                                                     
-                                                                     
- █████  █████              █████           █████                     
-░░███  ░░███              ░░███           ░░███                      
- ░███   ░███ ████████   ███████   ██████  ███████    ██████          
- ░███   ░███░░███░░███ ███░░███  ░░░░░███░░░███░    ███░░███         
- ░███   ░███ ░███ ░███░███ ░███   ███████  ░███    ░███████          
- ░███   ░███ ░███ ░███░███ ░███  ███░░███  ░███ ███░███░░░           
- ░░████████  ░███████ ░░████████░░████████ ░░█████ ░░██████          
-  ░░░░░░░░   ░███░░░   ░░░░░░░░  ░░░░░░░░   ░░░░░   ░░░░░░           
-             ░███                                                    
-             █████                                                   
-            ░░░░░                                                    
-"
-sleep 2s
+## Script to Update Server
 clear
+    # Create Host Variable for Machine
+    host=$(cat /etc/hostname)
+    echo "$host"
+clear
+## NTFY Notification Start
+curl -H "Title: $host Update" -H "Markdown: yes" -d "$host Update Initiated" https://ntfy.ahillier.dev/"$host"
+
     # Update package lists
-    sudo NEEDRESTART_MODE=a apt update
+    sudo NEEDRESTART_MODE=a apt update -y
 
     # Upgrade installed packages
     sudo NEEDRESTART_MODE=a apt upgrade -y
@@ -40,11 +20,12 @@ clear
 
     # Remove unnecessary files
     sudo NEEDRESTART_MODE=a apt autoremove -y
-    sudo NEEDRESTART_MODE=a apt clean
-    sleep 2s
-    clear
+    sudo NEEDRESTART_MODE=a apt clean -y
 
-#Feel free to remove this if you modify the script.
+## NTFY Notification End
+curl -H "Title: $host Update" -H "Markdown: yes" -d "$host Update Complete" https://ntfy.ahillier.dev/"$host"
+
+# Intellectual Property
 echo "Script By: "
 echo "
  █████   █████ ███ ████ ████ █████      ███ ████ ████                             
@@ -61,5 +42,3 @@ echo "
 "
 echo "https://hillbillyer.net"
 echo "contact@hillbillyer.net"
-sleep 3s
-clear
