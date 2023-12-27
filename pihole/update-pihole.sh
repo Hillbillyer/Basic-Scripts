@@ -3,19 +3,14 @@
 #Machine Updates
 sudo /hill/scripts/update.sh
 
-clear
-    # Create Host Variable for Machine
-    host=$(cat /etc/hostname)
-    echo "$host"
-clear
 ## NTFY Notification Start
-curl -H "Title: $host Pihole Update" -H "Markdown: yes" -d "$host Pihole Update Initiated" https://ntfy.ahillier.dev/"$host"
+curl -H "Title: Pihole Update" -H "Markdown: yes" -d "Pihole Update Initiated" https://ntfy.ahillier.dev/pihole
 
     # Pihole Update
     sudo pihole -up
 
 ## NTFY Notification End
-curl -H "Title: $host Pihole Update" -H "Markdown: yes" -d "$host Pihole Update Complete" https://ntfy.ahillier.dev/"$host"
+curl -H "Title: Pihole Update" -H "Markdown: yes" -d "Pihole Update Complete" https://ntfy.ahillier.dev/pihole
 
 # Intellectual Property
 echo "Script By: "
