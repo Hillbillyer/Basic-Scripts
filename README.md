@@ -9,7 +9,7 @@ These Scripts are used for Pi-hole Servers:<br>
 
 
 ```
-sudo rm -r /hill/scripts
+sudo rm -r /hill
 sudo mkdir -p /hill
 sudo chown andrew:andrew /hill
 sudo chgrp andrew /hill

@@ -41,4 +41,4 @@ echo "
                                                        ░░░░░░                     
 "
 echo "https://hillbillyer.net"
-echo "contact@hillbillyer.net
+echo "contact@hillbillyer.net"
