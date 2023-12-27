@@ -10,14 +10,16 @@ These Scripts are used for Pi-hole Servers:<br>
 
 ```
 sudo rm -r /hill/scripts
-mkdir -p /hill
+sudo mkdir -p /hill
+sudo chown andrew:andrew /hill
+sudo chgrp andrew /hill
 git clone https://github.com/Hillbillyer/scripts /hill/scripts
 
 chmod +x /hill/scripts/alias.sh
 chmod +x /hill/scripts/update.sh
-chmod +x /hill/scripts/update-lgsm.sh
-chmod +x /hill/scripts/start-all.sh
-chmod +x /hill/scripts/update-pihole.sh
+chmod +x /hill/scripts/linuxgsm/update-lgsm.sh
+chmod +x /hill/scripts/linuxgsm/start-lgsm.sh
+chmod +x /hill/scripts/pihole/update-pihole.sh
 
 /hill/scripts/alias.sh
 ```
