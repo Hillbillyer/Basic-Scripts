@@ -1,30 +1,34 @@
 #!/bin/sh
 
-curl -H "Title: Start-Game-Server" -d "Starting All Game Servers" https://ntfy.ahillier.dev/game-server
+#Machine Updates
+sudo /hill/scripts/update.sh
 
-##Script to Start All Game Servers
-clear
+## NTFY Notification Start
+curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Initiated" https://ntfy.ahillier.dev/"$host"
+
 #Copy List of Current LGSM Servers
 echo "--==Grabbing Server List==--"
 sleep 3s
-wget -O hills-scripts/lgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
+wget -O /hill/scripts/linuxgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
 clear
 #Create Game Server Variables
 echo "--==Updating Game Servers==--"
 sleep 3s
 clear
+# Updates Currently Installed Game Servers
 while IFS="," read shortname gameservername gamename os;
-#Updates Currently Installed Game Servers
 do 
     clear
-    sudo su - ${shortname} -c "echo '--=='${gamename}' Starting==--' && ./'${shortname}'server start && clear"
-done < hills-scripts/lgsm/serverlist.csv
+    sudo su - ${shortname} -c "echo '--=='${gamename}' Stopping==--' && ./'${shortname}'server stop && clear"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' Updating==--' && ./'${shortname}'server update && clear"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' LGSM Config Updating==--' && ./'${shortname}'server update-lgsm && clear"
+done < /hill/scripts/linuxgsm/serverlist.csv
 clear
 
-curl -H "Title: Game-Server" -d "All Game Servers Up & Running" https://ntfy.ahillier.dev/game-server
-clear
+## NTFY Notification End
+curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Complete" https://ntfy.ahillier.dev/"$host"
 
-#Feel free to remove this if you modify the script.
+# Intellectual Property
 echo "Script By: "
 echo "
  █████   █████ ███ ████ ████ █████      ███ ████ ████                             
@@ -41,3 +45,6 @@ echo "
 "
 echo "https://hillbillyer.net"
 echo "contact@hillbillyer.net"
+
+sleep 3s
+sudo reboot
