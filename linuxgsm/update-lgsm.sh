@@ -3,6 +3,11 @@
 #Machine Updates
 sudo /hill/scripts/update.sh
 
+clear
+    # Create Host Variable for Machine
+    host=$(cat /etc/hostname)
+    echo "$host"
+clear
 ## NTFY Notification Start
 curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Initiated" https://ntfy.ahillier.dev/"$host"
 
