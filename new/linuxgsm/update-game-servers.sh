@@ -4,7 +4,7 @@
 sudo /etc/scripts/new/update.sh
 
 ## NTFY Notification Start
-curl -H "Title: $host Game Server Update" -H "Markdown: yes" -d "$host Game Server Update Initiated" https://ntfy.ahillier.dev/"$host"
+curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Initiated" https://ntfy.ahillier.dev/"$host"
 
 #Copy List of Current LGSM Servers
 echo "--==Grabbing Server List==--"
@@ -26,7 +26,7 @@ done < hills-scripts/lgsm/serverlist.csv
 clear
 
 ## NTFY Notification End
-curl -H "Title: $host Game Server Update" -H "Markdown: yes" -d "$host Game Server Update Complete" https://ntfy.ahillier.dev/"$host"
+curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Complete" https://ntfy.ahillier.dev/"$host"
 
 # Intellectual Property
 echo "Script By: "
