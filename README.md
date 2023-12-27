@@ -1,11 +1,11 @@
 # Hill's Scripts
-Basic Scripts for Maintaining LinuxGSM Servers and Linux Machines.<br>
-
-These Scripts are for Ubuntu Machines:<br>
-[Linux Scripts](https://github.com/Hillbillyer/hills-scripts/tree/main/linux) <br>
+Scripts that I use to keep my Homelab up-to-date.<br>
 
 These Scripts are helpful if you are running LinuxGSM Game Servers:<br>
-[LinuxGSM Scripts](https://github.com/Hillbillyer/hills-scripts/tree/main/lgsm) <br>
+[LinuxGSM Scripts](https://github.com/Hillbillyer/scripts/tree/main/linuxgsm) <br>
+
+These Scripts are used for Pi-hole Servers:<br>
+[Pi-Hole Scripts](https://github.com/Hillbillyer/scripts/tree/main/pihole)
 
 
 *https://hillbillyer.net*<br>
