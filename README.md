@@ -23,6 +23,7 @@ chmod +x /hill/scripts/pihole/update-pihole.sh
 
 ## Only copy this part the first time or when you would like to update the aliases.
 /hill/scripts/alias.sh
+source ~/.bashrc
 ```
 
 *https://hillbillyer.net*<br>
