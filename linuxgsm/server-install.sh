@@ -29,30 +29,30 @@ while [ "$exit_script" != true ]; do
                 echo "$opt <-- Selected"
                 # Add your custom actions based on the selected server here
 
-                echo "Installing Dependencies"
-                sleep 3s
-                # Download the CSV file
-                wget -O hills-scripts/lgsm/dependencies.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv
-                sudo dpkg --add-architecture i386
-                sudo apt update
-                clear
-                # Use awk to remove the first field from each line and store it in a variable
-                result=$(awk -F',' '{ for(i=2;i<=NF;++i) printf "%s ", $i; print "" }' hills-scripts/lgsm/dependencies.csv)
-                # Replace newlines with spaces
-                result=$(echo "$result" | tr -d '\n')
-                # Trim trailing space
-                result="${result%" "}"
-                # Print the final result
-                echo "Resulting variable: $result"
-                # Create an array from the space-separated string
-                IFS=' ' read -ra packages <<< "$result"
-                # Install packages individually, ignoring errors
-                for package in "${packages[@]}"; do
-                    sudo apt install -y "$package" 2>/dev/null
-                done
-                echo "Dependencies Updated"
-                sleep 3s
-                clear
+                # echo "Installing Dependencies"
+                # sleep 3s
+                # # Download the CSV file
+                # wget -O hills-scripts/lgsm/dependencies.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/ubuntu-22.04.csv
+                # sudo dpkg --add-architecture i386
+                # sudo apt update
+                # clear
+                # # Use awk to remove the first field from each line and store it in a variable
+                # result=$(awk -F',' '{ for(i=2;i<=NF;++i) printf "%s ", $i; print "" }' hills-scripts/lgsm/dependencies.csv)
+                # # Replace newlines with spaces
+                # result=$(echo "$result" | tr -d '\n')
+                # # Trim trailing space
+                # result="${result%" "}"
+                # # Print the final result
+                # echo "Resulting variable: $result"
+                # # Create an array from the space-separated string
+                # IFS=' ' read -ra packages <<< "$result"
+                # # Install packages individually, ignoring errors
+                # for package in "${packages[@]}"; do
+                #     sudo apt install -y "$package" 2>/dev/null
+                # done
+                # echo "Dependencies Updated"
+                # sleep 3s
+                # clear
                 echo "Installing '$opt'"
                 sleep 3s
                 clear
