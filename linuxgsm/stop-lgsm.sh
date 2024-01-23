@@ -10,7 +10,7 @@ sleep 3s
 wget -O /hill/scripts/linuxgsm/serverlist.csv https://raw.githubusercontent.com/GameServerManagers/LinuxGSM/master/lgsm/data/serverlist.csv
 clear
 #Create Game Server Variables
-echo "--==Updating Game Servers==--"
+echo "--==Stopping Game Servers==--"
 sleep 3s
 clear
 while IFS="," read shortname gameservername gamename os;

@@ -17,8 +17,10 @@ git clone https://github.com/Hillbillyer/scripts /hill/scripts
 
 chmod +x /hill/scripts/alias.sh
 chmod +x /hill/scripts/update.sh
+chmod +x /hill/scripts/linuxgsm/install-lgsm.sh
 chmod +x /hill/scripts/linuxgsm/update-lgsm.sh
 chmod +x /hill/scripts/linuxgsm/start-lgsm.sh
+chmod +x /hill/scripts/linuxgsm/stop-lgsm.sh
 chmod +x /hill/scripts/pihole/update-pihole.sh
 
 ## Only copy this part the first time or when you would like to update the aliases.
