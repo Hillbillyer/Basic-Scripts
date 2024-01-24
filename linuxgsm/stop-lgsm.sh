@@ -17,7 +17,7 @@ while IFS="," read shortname gameservername gamename os;
 #Updates Currently Installed Game Servers
 do 
     clear
-    sudo su - ${shortname} -c "echo '--=='${gamename}' Stoping==--' && ./'${shortname}'server stop && clear"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' Stopping==--' && ./'${shortname}'server stop && clear"
 done < /hill/scripts/linuxgsm/serverlist.csv
 clear
 
