@@ -31,7 +31,7 @@ curl \
 export WEBHOOK_URL="https://discord.com/api/webhooks/1202408436030111844/78rpiKohk3QDJdgxx50JOHaDRGioDxnEp_SzIb_njUuKhvn3iVTC_ZrmwablNR9hIRN4"
 curl \
   -H "Content-Type: application/json" \
-  -d '{"username": "Hacker Man", "content": "$host has finished Updating!"}' \
+  -d '{"username": "Hacker Man", "content": "'$host' has finished Updating!"}' \
   $WEBHOOK_URL
 
 # Intellectual Property
