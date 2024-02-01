@@ -2,8 +2,7 @@
 
 sed -i '/##CUSTOM ALIASES/,/^$/d' ~/.bashrc
 
-echo "
-##CUSTOM ALIASES
+echo "##CUSTOM ALIASES
 alias update='sudo /hill/scripts/update.sh'
 alias install-lgsm='sudo /hill/scripts/linuxgsm/install-lgsm.sh'
 alias update-lgsm='sudo /hill/scripts/linuxgsm/update-lgsm.sh'
