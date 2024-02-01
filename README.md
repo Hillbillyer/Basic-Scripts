@@ -17,6 +17,8 @@ git clone https://github.com/Hillbillyer/scripts /hill/scripts
 
 chmod +x /hill/scripts/alias.sh
 chmod +x /hill/scripts/update.sh
+chmod +x /hill/scripts/ubuntu/cloud-update.sh
+chmod +x /hill/scripts/ubuntu/local-update.sh
 chmod +x /hill/scripts/linuxgsm/install-lgsm.sh
 chmod +x /hill/scripts/linuxgsm/update-lgsm.sh
 chmod +x /hill/scripts/linuxgsm/start-lgsm.sh
