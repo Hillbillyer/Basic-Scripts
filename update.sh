@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ## Script to Update Server
 clear
@@ -6,8 +6,13 @@ clear
     host=$(cat /etc/hostname)
     echo "$host"
 clear
-## NTFY Notification Start
-curl -H "Title: $host Machine Update" -H "Markdown: yes" -d "$host Machine Update Initiated" https://ntfy.ahillier.dev/"$host"
+
+## Discord Notification Start
+export WEBHOOK_URL="https://discord.com/api/webhooks/1202408436030111844/78rpiKohk3QDJdgxx50JOHaDRGioDxnEp_SzIb_njUuKhvn3iVTC_ZrmwablNR9hIRN4"
+curl \
+  -H "Content-Type: application/json" \
+  -d '{"username": "Hacker Man", "content": "$host has started Updating!"}' \
+  $WEBHOOK_URL
 
     # Update package lists
     sudo NEEDRESTART_MODE=a apt update -y
@@ -22,8 +27,12 @@ curl -H "Title: $host Machine Update" -H "Markdown: yes" -d "$host Machine Updat
     sudo NEEDRESTART_MODE=a apt autoremove -y
     sudo NEEDRESTART_MODE=a apt clean -y
 
-## NTFY Notification End
-curl -H "Title: $host Machine Update" -H "Markdown: yes" -d "$host Machine Update Complete" https://ntfy.ahillier.dev/"$host"
+## Discord Notification End
+export WEBHOOK_URL="https://discord.com/api/webhooks/1202408436030111844/78rpiKohk3QDJdgxx50JOHaDRGioDxnEp_SzIb_njUuKhvn3iVTC_ZrmwablNR9hIRN4"
+curl \
+  -H "Content-Type: application/json" \
+  -d '{"username": "Hacker Man", "content": "$host has finished Updating!"}' \
+  $WEBHOOK_URL
 
 # Intellectual Property
 echo "Script By: "
