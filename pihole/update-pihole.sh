@@ -1,18 +1,35 @@
-#!/bin/sh
+#!/bin/bash
 
-#Machine Updates
+## Creating Host Variable ##
+clear
+host=$(cat /etc/hostname)
+## ---------------------------------------- ##
+
+## Discord Notification ##
+export WEBHOOK_URL="https://discord.com/api/webhooks/1202411890106564709/pbpcKw6XvUpVRDjmpr4QiGSfV8p-6VeqdE8nvWQfhPKfwUVWU3VYrPPvULM_VJJyuLia"
+curl \
+  -H "Content-Type: application/json" \
+  -d '{"username": "Hacker Man", "content": "'$host' has started Updating!"}' \
+  $WEBHOOK_URL
+## ---------------------------------------- ##
+
+## Machine Updates ##
 sudo /hill/scripts/update.sh
+## ---------------------------------------- ##
 
-## NTFY Notification Start
-curl -H "Title: Pihole Update" -H "Markdown: yes" -d "Pihole Update Initiated" https://ntfy.ahillier.dev/pihole
+## Pihole Update ##
+sudo pihole -up
+## ---------------------------------------- ##
 
-    # Pihole Update
-    sudo pihole -up
+## Discord Notification ##
+export WEBHOOK_URL="https://discord.com/api/webhooks/1202411890106564709/pbpcKw6XvUpVRDjmpr4QiGSfV8p-6VeqdE8nvWQfhPKfwUVWU3VYrPPvULM_VJJyuLia"
+curl \
+  -H "Content-Type: application/json" \
+  -d '{"username": "Hacker Man", "content": "'$host' has finished Updating!"}' \
+  $WEBHOOK_URL
+## ---------------------------------------- ##
 
-## NTFY Notification End
-curl -H "Title: Pihole Update" -H "Markdown: yes" -d "Pihole Update Complete" https://ntfy.ahillier.dev/pihole
-
-# Intellectual Property
+## Intellectual Property ##
 echo "Script By: "
 echo "
  █████   █████ ███ ████ ████ █████      ███ ████ ████                             
@@ -29,6 +46,7 @@ echo "
 "
 echo "https://hillbillyer.net"
 echo "contact@hillbillyer.net"
+## ---------------------------------------- ##
 
 sleep 3s
 sudo reboot

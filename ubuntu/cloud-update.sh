@@ -13,7 +13,7 @@ curl \
   $WEBHOOK_URL
 ## ---------------------------------------- ##
 
-#Machine Updates ##
+## Machine Updates ##
 sudo /hill/scripts/update.sh
 ## ---------------------------------------- ##
 
