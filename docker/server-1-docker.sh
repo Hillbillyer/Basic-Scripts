@@ -31,6 +31,8 @@ curl -H "Title: $host docker" -d "Stopping & Deleting All Docker Containers & Im
         cd /home/andrew/ntfy && sudo ./ntfy.sh && cd
     ## ---------------------------------------- ##
 
+sleep 10s
+
     ## Create Dashy Container
         curl -H "Title: $host docker" -d "Recreating Dashy Container" https://ntfy.hillbillyer.dev/"$host"
         cd /home/andrew/dashy && sudo docker-compose up -d && cd 
