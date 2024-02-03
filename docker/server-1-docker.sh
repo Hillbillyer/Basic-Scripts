@@ -50,10 +50,6 @@
         cd /home/andrew/invidious && sudo docker-compose up -d && cd
         ## ---------------------------------------- ##
 
-    ## Create Trilium Container
-        cd /home/andrew/trilium && sudo docker-compose up -d && cd
-        ## ---------------------------------------- ##
-
     ## Create Invoice Ninja Container
         cd /home/andrew/ninja && sudo docker-compose up -d && cd
         ## ---------------------------------------- ##
