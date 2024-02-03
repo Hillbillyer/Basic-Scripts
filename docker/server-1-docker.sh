@@ -1,21 +1,15 @@
 #!/bin/bash
 
-read -p "Container: " container
-read -p "Image: " image
-
 ## Stop All Docker Containers
-    sudo docker stop "$container"
-    # $(docker ps -a -q)
+    sudo docker stop $(docker ps -a -q)
     ## ---------------------------------------- ##
 
 ## Delete All Docker Containers
-    sudo docker rm "$container"
-    # $(docker ps -a -q)
+    sudo docker rm $(docker ps -a -q)
     ## ---------------------------------------- ##
 
 ## Delete All Docker Images
-    sudo docker rmi "$image"
-    # $(docker images -a)
+    sudo docker rmi $(docker images -a)
     ## ---------------------------------------- ##
 
 ### CONTAINER CREATION ###
