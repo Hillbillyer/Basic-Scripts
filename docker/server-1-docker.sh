@@ -13,6 +13,11 @@
     ## ---------------------------------------- ##
 
 ### CONTAINER CREATION ###
+
+    ## Create NGINX Container
+        cd /home/andrew/nginx && sudo docker-compose up -d && cd
+    ## ---------------------------------------- ##
+
     ## Create Dashy Container
         cd /home/andrew/dashy && sudo docker-compose up -d && cd 
         ## ---------------------------------------- ##
@@ -52,3 +57,6 @@
     ## Create Invoice Ninja Container
         cd /home/andrew/ninja && sudo docker-compose up -d && cd
         ## ---------------------------------------- ##
+
+sleep 3s
+sudo reboot
