@@ -18,19 +18,19 @@
         ## ---------------------------------------- ##
 
     ## Create Uptime Kuma Container
-        sudo ./home/andrew/kuma/kuma.sh
+        cd /home/andrew/kuma && sudo ./kuma.sh && cd
         ## ---------------------------------------- ##
 
     ## Create FreshRSS Container
-        sudo ./home/andrew/freshrss/freshrss.sh
+        cd /home/andrew/freshrss && sudo ./freshrss.sh && cd
         ## ---------------------------------------- ##
 
     ## Create NTFY Container
-        sudo ./home/andrew/ntfy/ntfy.sh
+        cd /home/andrew/ntfy && sudo ./ntfy.sh && cd
         ## ---------------------------------------- ##
 
     ## Create Kavita Container
-        sudo ./home/andrew/kavita/kavita.sh
+        cd /home/andrew/kavita && sudo ./kavita.sh && cd
         ## ---------------------------------------- ##
 
     ## Create Homebox Container
