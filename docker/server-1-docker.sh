@@ -5,19 +5,18 @@
     host=$(cat /etc/hostname)
 ## ---------------------------------------- ##
 
+curl -H "Title: $host docker" -d "Stopping & Deleting All Docker Containers & Images" https://ntfy.hillbillyer.dev/"$host"
+
 ## Stop All Docker Containers
     sudo docker stop $(docker ps -a -q)
-    curl -H "Title: $host docker" -d "Stopped All Docker Containers" https://ntfy.hillbillyer.dev/"$host"
 ## ---------------------------------------- ##
 
 ## Delete All Docker Containers
     sudo docker rm $(docker ps -a -q)
-    curl -H "Title: $host docker" -d "Deleted All Docker Containers" https://ntfy.hillbillyer.dev/"$host"
 ## ---------------------------------------- ##
 
 ## Delete All Docker Images
     sudo docker rmi $(docker images -a)
-    curl -H "Title: $host docker" -d "Deleted All Docker Images" https://ntfy.hillbillyer.dev/"$host"
 ## ---------------------------------------- ##
 
 ### CONTAINER CREATION ###
@@ -25,6 +24,11 @@
     ## Create NGINX Container
         curl -H "Title: $host docker" -d "Recreating NGINX Container" https://ntfy.hillbillyer.dev/"$host"
         cd /home/andrew/nginx && sudo docker-compose up -d && cd
+    ## ---------------------------------------- ##
+
+    ## Create NTFY Container
+        curl -H "Title: $host docker" -d "Recreating NTFY Container" https://ntfy.hillbillyer.dev/"$host"
+        cd /home/andrew/ntfy && sudo ./ntfy.sh && cd
     ## ---------------------------------------- ##
 
     ## Create Dashy Container
@@ -40,11 +44,6 @@
     ## Create FreshRSS Container
         curl -H "Title: $host docker" -d "Recreating FreshRSS Container" https://ntfy.hillbillyer.dev/"$host"
         cd /home/andrew/freshrss && sudo ./freshrss.sh && cd
-    ## ---------------------------------------- ##
-
-    ## Create NTFY Container
-        curl -H "Title: $host docker" -d "Recreating NTFY Container" https://ntfy.hillbillyer.dev/"$host"
-        cd /home/andrew/ntfy && sudo ./ntfy.sh && cd
     ## ---------------------------------------- ##
 
     ## Create Kavita Container
