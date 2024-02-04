@@ -5,12 +5,8 @@ clear
 host=$(cat /etc/hostname)
 ## ---------------------------------------- ##
 
-## Discord Notification ##
-export WEBHOOK_URL="https://discord.com/api/webhooks/1202411890106564709/pbpcKw6XvUpVRDjmpr4QiGSfV8p-6VeqdE8nvWQfhPKfwUVWU3VYrPPvULM_VJJyuLia"
-curl \
-  -H "Content-Type: application/json" \
-  -d '{"username": "Hacker Man", "content": "'$host' has started Updating!"}' \
-  $WEBHOOK_URL
+## NTFY Notification ##
+curl -H "Title: $host Pi-Hole" -d "Pi-Hole Update Starting" https://ntfy.hillbillyer.dev/"$host"
 ## ---------------------------------------- ##
 
 ## Machine Updates ##
@@ -21,12 +17,8 @@ sudo /hill/scripts/update.sh
 sudo pihole -up
 ## ---------------------------------------- ##
 
-## Discord Notification ##
-export WEBHOOK_URL="https://discord.com/api/webhooks/1202411890106564709/pbpcKw6XvUpVRDjmpr4QiGSfV8p-6VeqdE8nvWQfhPKfwUVWU3VYrPPvULM_VJJyuLia"
-curl \
-  -H "Content-Type: application/json" \
-  -d '{"username": "Hacker Man", "content": "'$host' has finished Updating!"}' \
-  $WEBHOOK_URL
+## NTFY Notification ##
+curl -H "Title: $host Pi-Hole" -d "Pi-Hole Update Finished" https://ntfy.hillbillyer.dev/"$host"
 ## ---------------------------------------- ##
 
 ## Intellectual Property ##
