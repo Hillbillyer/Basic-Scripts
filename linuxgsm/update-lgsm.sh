@@ -9,7 +9,7 @@ clear
     echo "$host"
 clear
 ## NTFY Notification Start
-curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Initiated" https://ntfy.ahillier.dev/"$host"
+curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Initiated" https://ntfy.hillbillyer.dev/"$host"
 
 #Copy List of Current LGSM Servers
 echo "--==Grabbing Server List==--"
@@ -27,11 +27,12 @@ do
     sudo su - ${shortname} -c "echo '--=='${gamename}' Stopping==--' && ./'${shortname}'server stop && clear"
     sudo su - ${shortname} -c "echo '--=='${gamename}' Updating==--' && ./'${shortname}'server update && clear"
     sudo su - ${shortname} -c "echo '--=='${gamename}' LGSM Config Updating==--' && ./'${shortname}'server update-lgsm && clear"
+    curl -H "Title: ${shortname} Updated" -H "Markdown: yes" -d "${gamename} has been updated!" https://ntfy.hillbillyer.dev/"$host"
 done < /hill/scripts/linuxgsm/serverlist.csv
 clear
 
 ## NTFY Notification End
-curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Complete" https://ntfy.ahillier.dev/"$host"
+curl -H "Title: $host LinuxGSM Update" -H "Markdown: yes" -d "$host LinuxGSM Update Complete" https://ntfy.hillbillyer.dev/"$host"
 
 # Intellectual Property
 echo "Script By: "
