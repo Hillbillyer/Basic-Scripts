@@ -26,7 +26,7 @@ do
     clear
     sudo su - ${shortname} -c "echo '--=='${gamename}' Stopping==--' && ./'${shortname}'server stop && clear"
     sudo su - ${shortname} -c "echo '--=='${gamename}' Updating==--' && ./'${shortname}'server update && clear" 
-    sudo su - ${shortname} -c "echo '--=='${gamename}' LGSM Config Updating==--' && ./'${shortname}'server update-lgsm && clear" && curl -H "Title: ${shortname} Updated" -H "Markdown: yes" -d "${gamename} has been updated!" https://ntfy.hillbillyer.dev/"$host"
+    sudo su - ${shortname} -c "echo '--=='${gamename}' LGSM Config Updating==--' && ./'${shortname}'server update-lgsm && clear" && curl -H "Title: ${shortname} Updated" -H "Markdown: yes" -d "${gamename} has been Updated!" https://ntfy.hillbillyer.dev/"$host"
 done < /hill/scripts/linuxgsm/serverlist.csv
 clear
 
