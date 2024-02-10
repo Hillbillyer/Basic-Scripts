@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sudo rm -r /hill
 sudo mkdir -p /hill
