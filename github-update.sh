@@ -23,9 +23,5 @@ host=$(cat /etc/hostname)
 ## ---------------------------------------- ##
 
 ## Discord Notification ##
-export WEBHOOK_URL="https://discord.com/api/webhooks/1202410026367455292/lOo50UlEEdfr48-a1wdppo30HOQGIWtEb5D9POVxYknK9QuXiFdIm3zp0JRFtTYLqRF9"
-curl \
-  -H "Content-Type: application/json" \
-  -d '{"username": "Hacker Man", "content": "'$host' updated Github Repository"}' \
-  $WEBHOOK_URL
+curl -H "Title: $host Github" -d "Updated Github Respository" https://ntfy.hillbillyer.dev/"$host"
 ## ---------------------------------------- ##
