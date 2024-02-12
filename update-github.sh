@@ -19,7 +19,7 @@ chmod +x /hill/scripts/pihole/update-pihole.sh
 
 ## Creating Host Variable ##
 clear
-host=$(cat /etc/hostname)
+host=$(cat /hill/hostname)
 ## ---------------------------------------- ##
 
 ## Discord Notification ##
