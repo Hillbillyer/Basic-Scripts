@@ -2,7 +2,7 @@
 
 ## Creating Host Variable ##
 clear
-host=$(cat /hill/hostname)
+host=$(cat /hostname)
 ## ---------------------------------------- ##
 
 ## NTFY Notification ##

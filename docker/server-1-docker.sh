@@ -2,7 +2,7 @@
 
 ## Creating Host Variable ##
 clear
-host=$(cat /hill/hostname)
+host=$(cat /hostname)
 ## ---------------------------------------- ##
 
 curl -H "Title: $host docker" -d "Stopping & Deleting All Docker Containers & Images" https://ntfy.hillbillyer.dev/"$host"
