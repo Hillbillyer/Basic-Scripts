@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 curl -H "Title: Stop-Game-Server" -d "Stopping All Game Servers" https://ntfy.ahillier.dev/game-server
 

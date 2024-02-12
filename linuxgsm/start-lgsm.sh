@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 curl -H "Title: Start-Game-Server" -d "Starting All Game Servers" https://ntfy.ahillier.dev/game-server
 

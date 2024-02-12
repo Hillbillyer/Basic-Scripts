@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 curl -H "Title: Restart-Game-Server" -d "Restarting All Game Servers" https://ntfy.ahillier.dev/game-server
 

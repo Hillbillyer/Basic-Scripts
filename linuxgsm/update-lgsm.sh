@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #Machine Updates
 sudo /hill/scripts/update.sh
