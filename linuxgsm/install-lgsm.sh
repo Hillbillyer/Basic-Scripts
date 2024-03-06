@@ -133,7 +133,7 @@ while [ "$exit_script" != true ]; do
                     fi
                 done
                 
-                echo -e "steamuser=$steamusername\nsteampass=$steampassword" >> "/home/$username/lgsm/config-lgsm/"$username"server/common.cfg"
+                echo -e "steamuser='$steamusername'\nsteampass='$steampassword'" >> "/home/$username/lgsm/config-lgsm/"$username"server/common.cfg"
                 
                 su - "$username" -c "./'$username'server auto-install"
 
