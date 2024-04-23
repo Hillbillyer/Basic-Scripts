@@ -15,6 +15,7 @@ chmod +x /hill/scripts/linuxgsm/update-lgsm.sh
 chmod +x /hill/scripts/linuxgsm/start-lgsm.sh
 chmod +x /hill/scripts/linuxgsm/restart-lgsm.sh
 chmod +x /hill/scripts/linuxgsm/stop-lgsm.sh
+chmod +x /hill/scripts/linuxgsm/palworld-restart.sh
 chmod +x /hill/scripts/pihole/update-pihole.sh
 
 ## Creating Host Variable ##
