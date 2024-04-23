@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod +x /hill/scripts/github-update.sh
+chmod +x /hill/scripts/update-github.sh
 
     # Update package lists
     sudo NEEDRESTART_MODE=a apt update -y

@@ -6,7 +6,7 @@ sudo chown andrew:andrew /hill
 sudo chgrp andrew /hill
 git clone https://github.com/Hillbillyer/scripts /hill/scripts
 
-chmod +x /hill/scripts/github-update.sh
+chmod +x /hill/scripts/update-github.sh
 chmod +x /hill/scripts/update.sh
 chmod +x /hill/scripts/ubuntu/cloud-update.sh
 chmod +x /hill/scripts/ubuntu/local-update.sh
