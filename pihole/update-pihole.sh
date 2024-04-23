@@ -17,6 +17,14 @@ sudo /hill/scripts/update.sh
 sudo pihole -up
 ## ---------------------------------------- ##
 
+## Pihole Gravity Update ##
+sudo pihole updateGravity
+## ---------------------------------------- ##
+
+## Unbound Update Root Hints ##
+wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+## ---------------------------------------- ##
+
 ## NTFY Notification ##
 curl -H "Title: $host Pi-Hole" -d "Pi-Hole Update Finished" https://ntfy.hillbillyer.dev/"$host"
 ## ---------------------------------------- ##
